@@ -13,7 +13,7 @@ The following public APIs are provided by **HISPlayerManager**:
     * **public Material material**: Reference to the Unity Material.
     * **public RawImage rawImage**: Reference to the Unity Raw Image.
     * **public RenderTexture renderTexture**: Reference to the Unity Render Texture.
-    * **public IntPtr externalSurface**: Reference to the external surface object. (Only in SDK v4.3.2 and v4.5.2)
+    * **public IntPtr externalSurface**: Reference to the external surface object.
     * **public List \<string\> url**: List of the URLs for the stream.
     * **public list \<string\> urlMimeTypes**: List of the HISPlayerMimeTypes attached to each URL from the url list.
     * **public bool autoPlay**: If true, the players will start playing automatically after set-up.
@@ -59,10 +59,6 @@ The following public APIs are provided by **HISPlayerManager**:
     * **HISPLAYER_EVENT_NETWORK_CONNECTED**
     * **HISPLAYER_EVENT_TIMELINE_UPDATED**
     * **HISPLAYER_EVENT_END_OF_CONTENT**
-    * **HISPLAYER_EVENT_CACHE_PROGRESS** (Only in SDK v3.4.3)
-    * **HISPLAYER_EVENT_CACHE_URL_ADDED** (Only in SDK v3.4.3)
-    * **HISPLAYER_EVENT_CACHE_URL_REMOVED** (Only in SDK v3.4.3)
-    * **HISPLAYER_EVENT_CACHE_FLUSH_FINISHED** (Only in SDK v3.4.3)
 
 * **public enum HISPlayerError**: The list of errors provided by HISPlayer SDK. The errors can be used with the virtual functions in the next section:
    * **HISPLAYER_ERROR_LICENSE_EXPIRED** (no function on this)
@@ -83,15 +79,6 @@ The following public APIs are provided by **HISPlayerManager**:
    * **public float param3**: This will have different meanings depending on the event. If there is no information about the parameter, it will have the default value -1.
    * **public float param4**: This will have different meanings depending on the event. If there is no information about the parameter, it will have the default value -1.
    * **public string stringInfo**: Log information about the event.
-
-* **public class HISPlayerEventCacheProgress**: The information of the CacheProgress event. (Only in SDK v3.4.3)
-   * **public float requestLength**: The length of the content being cached in bytes.
-   * **public float bytesCached**: The number of bytes that are cached.
-   * **public float newBytesCached**: The number of bytes that have been newly cached since the last progress update.
-
-* **public class HISPlayerEventCacheURL**: The information of the Cache URL that is added or removed. (Only in SDK v3.4.3)
-   * **public HISPlayerEvent eventType**: The type of the event triggered.
-   * **public string url**: The URL attached to the event.
 
 * **public struct HISPlayerErrorInfo**: The information of the triggered error.
    * **public HISPlayerError errorType**: The type of the error triggered.
@@ -299,22 +286,6 @@ This event occurs whenever the network has been reconnected.
 Override this method to add custom logic when **HISPlayerEvent.HISPlayerEvent.HISPLAYER_EVENT_TIMELINE_UPDATED** is triggered.
 This event occurs whenever the timeline of the current video has been updated. In the case of live content this may happen every certain time during the playback. This may change the current video position value from GetVideoPosition().
 
-#### protected virtual void EventCacheProgress(HISPlayerEventCacheProgress cacheProgress)
-Only in SDK v3.4.3. Override this method to add custom logic when **HISPLAYER_EVENT_CACHE_PROGRESS** is triggered. 
-This event occurs whenever there is a process of caching a certain URL. It shows the progress data of the current cache operation.
-
-#### protected virtual void EventCacheURLAdded(HISPlayerEventCacheURL cacheURL)
-Only in SDK v3.4.3. Override this method to add custom logic when **HISPLAYER_EVENT_CACHE_URL_ADDED** is triggered.
-This event occurs whenever the current cache operation has finished of adding the URL to the cache.
-
-#### protected virtual void EventCacheURLRemoved(HISPlayerEventCacheURL cacheURL)
-Only in SDK v3.4.3. Override this method to add custom logic when **HISPLAYER_EVENT_CACHE_URL_REMOVED** is triggered.
-This event occurs whenever the current cache operation has finished of removing the URL from cache.
-
-#### protected virtual void EventCacheFlushed(HISPlayerEventInfo eventInfo)
-Only in SDK v3.4.3. Override this method to add custom logic when **HISPLAYER_EVENT_CACHE_FLUSH_FINISHED** is triggered.
-This event occurs whenever the cache data has been flushed.
-
 #### protected virtual void ErrorInfo(HISPlayerErrorInfo errorInfo)
 Override this method to add custom logic when an error callback is triggered. Please, refer to the **HISPlayerError** list.
 
@@ -436,15 +407,6 @@ Set a new minimum bitrate (in bits per second) of a specific track. This doesn't
 #### void SelectTrack(int playerIndex, int trackIndex)
 Select a certain track of a certain stream to be used as the main track. This action will disable ABR, to enable it again you can use **EnableABR** API. The possible tracks can be obtained from the tracks returned from the method **GetTracks**. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
 
-#### void SetDecodedFrameBufferEnabled(bool enable, int playerIndex = 0 (optional))
-Enable the Decoded Frame Buffer Functionality. This function can be called independently of the SetUp function. This functionality can only be called for one single stream. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
-
-#### async Task<Texture2D> GetDecodedFrameAtTimestamp(int msec, bool deletePreviousFrames = true (optional))
-Retrieves the Texture2D of the requested frame or null if the frame is not available for the given timestamp (parameter msec in milliseconds).
-
-#### Vector2Int GetDecodedFrameBufferRange()
-Retrieves the range of the Decoded Frame Buffer in milliseconds. The X value of the Vector2Int corresponds to the timestamp in milliseconds of the oldest frame stored in the buffer, while the Y value corresponds to the newest.
-
 #### int GetNetworkBandwidth()
 Returns the current network bandwidth. This value is an estimation in kbps.
    
@@ -480,21 +442,3 @@ Fill the audio buffer with new audio PCM data. The **playerIndex** is the index 
 
 #### int GetAudioSessionId(int playerIndex)
 Provide the audio session identifier. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
-
-#### void InitCacheInstance(long maxCacheSize = 150 * 1024 * 1024L)
-Only in SDK v3.4.3. Initialize the Cache Instance in order to use all the cache API. It can be called before or after SetUpPlayer(). In the case of overriding the Awake() function, InitCacheInstance must be called after calling base.Awake(). The maxCacheSize indicates the maximum permitted size by the cache in bytes. 150 MB will be set by default (150 * 1024 * 1024L bytes).
-
-#### void AddURLToCache(string url)
-Only in SDK v3.4.3. The cache must be initialized before using this function. Given the URL, a miminum amount of data will be stored in cache in order to initialize the video faster when it's needed. Once the video is loaded and played, it will continue caching the remaining fragments of the video. Live and Local video contents are not supported. In the case the cache folder is full, the least recently used old files will be removed when new data is downloaded following the Least Recently Used (LRU) cache policy.
-
-#### void RemoveURLFromCache(string url)
-Only in SDK v3.4.3. The cache must be initialized before using this function. Removes the given URL from the cache if exists. Live and Local video contents are not supported. In the case the cache folder is full, the least recently used old files will be removed when new data is downloaded following the Least Recently Used (LRU) cache policy so it's possible the cached data from AddUrlToCache doesn't exist anymore.
-
-#### bool IsURLCached(string url)
-Only in SDK v3.4.3. The cache must be initialized before using this function. Determines if the given URL is cached. In the case the cache folder is full, the least recently used old files will be removed when new data is downloaded following the Least Recently Used (LRU) cache policy so it's possible the cached data from AddUrlToCache doesn't exist anymore.
-  
-#### long GetRemainingCacheSpace() 
-Only in SDK v3.4.3. The cache must be initialized before using this function. Retrieves the remaining cache space in bytes.
-
-#### void FlushCacheFolder()
-Only in SDK v3.4.3. The cache must be initialized before using this function. Free the cache folder. If a video was loaded from using the cache data, it will continue downloading the new fragments into the cache folder after the flushing is completed.
