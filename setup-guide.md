@@ -119,11 +119,25 @@ In the HISPlayer multistream properties, set the **RenderMode** as **External Su
 
 ### Script
 
-Please check Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/**HISPlayerSample.cs** script and refer to the **SetUpMetaQuest()** function:
+Please check Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/**HISPlayerSample.cs** script. The script must inherit from **HISPlayerManager**. It is necessary to add the **'using HISPlayerAPI;'** dependency
+
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using HISPlayerAPI;
+
+public class AndroidStreamController : HISPlayerManager
+{
+    ...
+}
+```
+
+Next, please refer to the **SetUpMetaQuest()** function:
 - Find OVROverlay component from the GameObject (**RenderScreen**) that we have created.
 - When the external surface object has been created:
   - Set the external surface to HISPlayer multistream properties's **externalSurface** object.
-  - Call SetUpPlayer() to initialize the player and load the stream. 
+  - Call **SetUpPlayer()** to initialize the player and load the stream. 
 
 ### Non-DRM Video Playback
 If you are not playing a DRM protected content, please modify the **MultiStreamProperties** by unchecking the **Enable DRM** checkbox to disable DRM and remove all element from **Key Server URI** list.
