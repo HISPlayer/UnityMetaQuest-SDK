@@ -10,7 +10,7 @@ In addition, Android’s devices need permission for using some features such as
 To use this format, it’s necessary to create a new folder into the **Assets** folder of Unity named **StreamingAssets**.
 
 <p align="center">
-<img width=40% src="./assets/streaming-assets.png">
+<img width=40% src="https://hisplayer.github.io/UnityAndroid-SDK/assets/streaming-assets.png">
 </p>
 
 ### Video File
@@ -18,7 +18,7 @@ Add the video file inside the StreamingAssets folder and pass the file name (**w
 &nbsp;
 
 <p align="center">
-<img width = 70% src="./assets/content-strassets.png">
+<img width = 70% src="https://hisplayer.github.io/UnityAndroid-SDK/assets/content-strassets.png">
 </p>
 
 In case that subfolders are created inside StreamingAssets, the path of the file **must include the subfolder’s name** inside the field of Multi Stream Properties, e.g, with a subfolder named **“MyVideos”** the following path must be used: 
