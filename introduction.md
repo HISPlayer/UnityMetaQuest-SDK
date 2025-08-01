@@ -2,8 +2,6 @@
 
 HISPlayer is the most advanced video streaming player for Unity, supporting local, VOD and live contents. It enables premium DASH and HLS video streaming inside your games and metaverses on Meta Quest. We include the support of 8K video playback, Widevine L1 DRM protection for premium contents and advanced features such as multistream or automatic bitrate adaptation to secure the best video quality.
 
-For the complete Documentation for all Platforms, visit **[HISPlayer Unity SDKs](https://hisplayer.github.io/)**
-
 ## Compatibility
 
 ### Video Delivery Formats
