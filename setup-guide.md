@@ -1,11 +1,13 @@
 # QuickStart Guide
 Getting started with HISPlayer consists of implementing the following steps:
 
-1. Import and configure package   
+1. Import and configure packages   
 
-      1.1. Import package
+      1.1. Integrate Meta XR All-in-One SDK
  
-      1.2. Configure Unity for Android
+      1.2. Import package
+ 
+      1.3. Configure Unity for Android
    
 2. Create your own sample
    
@@ -19,26 +21,44 @@ Getting started with HISPlayer consists of implementing the following steps:
 
 It's also possible to import the [HISPlayer Sample](https://hisplayer.github.io/UnitySamples/#/hisplayer-sample) after completing step 1. The sample is a comprehensive example scene using the HISPlayerSDK to help demonstrate features like play, pause, seek, etc.
 
-## 1.1 Import package
+## 1.1 Integrate Meta XR All-in-One SDK
 
-Importing the package is the same as importing other normal packages in Unity. 
+Integrate HISPlayer SDK with the **[Meta XR All-in-One SDK](https://developer.oculus.com/downloads/package/meta-xr-sdk-all-in-one-upm/)**.
+
+First, please configure the Unity project for Oculus by following this [Tutorial](https://developer.oculus.com/documentation/unity/unity-tutorial-hello-vr/) and open **Window > Package Manager > Packages: In Project** to check Meta XR All-in-One SDK is installed properly.
+
+<p align="center">
+<img width="605" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/b4e362ba-f3d1-4d07-a46b-7a76e73d30fb">
+</p>
+
+#### Oculus platform
+
+Open **Edit > Player Settings > MetaXR**, select the Android platform and clik "**Select All**" and "**Apply All**" in order to set up all the Oculus settings. 
+
+<p align="center">
+<img width="90%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/691d9de5-3874-4b6a-bb1e-3b2981020590">
+</p>
+
+In XR Plug-in Management, please make sure that you have the **Oculus** option checked. Otherwise, when you run the application, it will show a 2D window without XR environment.
+  
+  - **Edit > Project Settings > XR Plug-in Management**
+
+<img width="1040" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/beb2689c-d884-495c-9fa4-07b70014dfed">
+
+## 1.2 Import HISPlayer SDK
+
+Importing the SDK is the same as importing other normal packages in Unity. 
 Select the package of _HISPlayer SDK_ and import it.
 
-**Assets > Import Package > Custom Package > HISPlayerSDK unity package**
+**Assets > Import Package > Custom Package > HISPlayer Meta Quest SDK unity package**
 
-The _HISPlayer Sample_ is included in the package. Refer to [Import HISPlayer Sample](https://hisplayer.github.io/UnitySamples/#/hisplayer-sample) to know more about the HISPlayer Sample.
-
-<p align="center">
-<img width=70% src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/c8ff9e55-524e-48f1-a323-95b00aa5c6c7">
-</p>
-
-In the case you don't want to include the HISPlayer Sample, please disable it from the _Import Unity Package_ window.
+Select the package of _HISPlayer SDK_ and import it.
 
 <p align="center">
-<img width=60% src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/e9cb3d17-8adf-490f-b910-46dff943c870">
+<img width=90% src="https://github.com/user-attachments/assets/c6c6d488-2b2c-4b79-b775-dd9dffc14471">
 </p>
 
-## 1.2 Configure Unity for Android
+## 1.3 Configure Unity for Android
 
 Open the window **Tools > HISPlayer** located in the upper side of the screen > Click on Player Settings Configuration > Select **Build Target to Android** > Set all the required settings.
 
@@ -63,9 +83,9 @@ Alternatively, you may set the Target API level to 33 or higher in the Unity pro
  
 ## 2.1 Setup HISPlayer Manager
 
-*You may skip this section if you are using [**HISPlayerSample**](./import-sample.md) or any other sample from HISPlayer. The code set-up is already included in the sample script (HISPlayerSample.cs).*
+*You may skip this section if you are using [**HISPlayer Meta Quest SDK Sample**](./hisplayer-meta-quest-sdk-sample.md) or any other sample from HISPlayer. The code set-up is already included in the sample script (HISPlayerSample.cs).*
 
-Create a new script which will inherit from **HISPlayerManager**, for example, AndroidStreamController. It is necessary to add the **'using HISPlayerAPI;'** dependancy. Then, add this component to a new game object (recommended to be empty).
+Create a new script which will inherit from **HISPlayerManager**, for example, StreamController. It is necessary to add the **'using HISPlayerAPI;'** dependancy. Then, add this component to a new game object (recommended to be empty).
 
 Call the **SetUpPlayer()** function in order to initialize the stream environment internally. This function can be called whenever it’s needed.
 
@@ -93,7 +113,7 @@ Remember to call the Release function after closing the app or before changing s
 
 ## 2.2 Attach Unity resources
 
-Move to **Unity Editor** to attach all the resources. The rendering system is supporting **Material**, **RawImage** and **RenderTexture** Unity’s components.
+Move to **Unity Editor** to attach all the resources. The rendering system is supporting **Material**, **RawImage**, **RenderTexture** and **External Surface** Unity’s components.
 
 ### <ins>Material</ins>
 Create a new Material from **Assets > Create > Material** and attach it to the GameObject that is going to be used as screen and to the stream controller component. 
@@ -143,6 +163,7 @@ Use Multi Stream Properties to set all the configuration needed for multi stream
 * <span style="color:blue">**Material**</span>: Attach the **Material** asset created to the **Material** section of the element.
 * <span style="color:blue">**Raw Image**</span>: Attach the **RawImage** asset created to the **RawImage** section of the element.
 * <span style="color:blue">**Render Texture**</span>: Attach the **RenderTexture** to the **RenderTexture** section of the element.
+* <span style="color:blue">**External Surface**</span>.
 * <span style="color:blue">**URL**</span>: Add the URL associated to the stream. Each stream can have multiple URLs, therefore users can use the same render surface to play different URLs. It is also possible to add local files allocated in the device’s storage and the StreamingAssets special folder of Unity (see [Playing Local Files](/local-files.md) for more details).
 * <span style="color:blue">**URL MIME Types**</span>: Set the MIME types of each URL. It can be using URL Extension, HLS or DASH. URL Extension is set by default.
 * <span style="color:blue">**Autoplay**</span>: Property to determine whether the player will start automatically after set up.
