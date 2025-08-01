@@ -127,7 +127,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HISPlayerAPI;
 
-public class AndroidStreamController : HISPlayerManager
+public class HISPlayerSample : HISPlayerManager
 {
     ...
 }
