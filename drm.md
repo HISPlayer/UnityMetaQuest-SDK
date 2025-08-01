@@ -34,5 +34,5 @@ Belos is an example of the usage of the DRM fields in the editor with different 
 </p>
 
 ## Widevine L1
-If you need to play Widevine L1 content, please refer to [HISPlayer Meta Quest SDK Sample](https://github.com/HISPlayer/UnityMetaQuest-SDK/blob/main/setup-guide.md#21-import-hisplayer-meta-quest-sdk-sample)
+If you need to play Widevine L1 content, please refer to [HISPlayer Meta Quest SDK Sample](https://hisplayer.github.io/UnityMetaQuest-SDK/#/setup-guide?id=quickstart-guide)
 
