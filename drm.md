@@ -30,7 +30,7 @@ Belos is an example of the usage of the DRM fields in the editor with different 
   * The third element is protected both with a license key and token.
 
 <p align="center">
-<img src="./assets/drm.png">
+<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/drm.png">
 </p>
 
 ## Widevine L1
