@@ -1,7 +1,7 @@
 # QuickStart Guide
 Getting started with HISPlayer consists of implementing the following steps:
 
-1. Import and configure packages   
+1. Import and configure SDKs
 
       1.1. Integrate Meta XR All-in-One SDK
  
@@ -9,17 +9,9 @@ Getting started with HISPlayer consists of implementing the following steps:
  
       1.3. Configure Unity for Android
    
-2. Create your own sample
+2. HISPlayer Meta Quest SDK Sample Usage
    
-    2.1 Setup HISPlayer Manager
-   
-    2.2 Attach Unity Resources
-   
-    2.3 Configure HISPlayer Properties
-
-    2.4 Build and Run
-
-It's also possible to import the [HISPlayer Sample](https://hisplayer.github.io/UnitySamples/#/hisplayer-sample) after completing step 1. The sample is a comprehensive example scene using the HISPlayerSDK to help demonstrate features like play, pause, seek, etc.
+    2.1 Import HISPlayer Meta Quest SDK Sample
 
 ## 1.1 Integrate Meta XR All-in-One SDK
 
@@ -81,98 +73,75 @@ It is recommended to set Target API Level to 33 or higher. By selecting Android 
 
 Alternatively, you may set the Target API level to 33 or higher in the Unity project settings.
  
-## 2.1 Setup HISPlayer Manager
+## 2.1 Import HISPlayer Meta Quest SDK Sample
 
-*You may skip this section if you are using [**HISPlayer Meta Quest SDK Sample**](./hisplayer-meta-quest-sdk-sample.md) or any other sample from HISPlayer. The code set-up is already included in the sample script (HISPlayerSample.cs).*
+Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaQuestSDK_Sample.unitypackage) (no need to download it if you have received it in the email). 
 
-Create a new script which will inherit from **HISPlayerManager**, for example, StreamController. It is necessary to add the **'using HISPlayerAPI;'** dependancy. Then, add this component to a new game object (recommended to be empty).
+Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps :
+  - Set up the Meta XR All-in-One environment
+  - Import HISPlayer SDK
+  - Import HISPlayer Meta Quest SDK Sample
+  - Open Assets/HISPlayerMetaQuestSample/Scenes/HISPlayerMetaQuestSDKSample.unity
+  - Import TextMeshPro
+  - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**
+  - Open File > Build Settings > Add Open Scenes
+  - Build and Run
 
-Call the **SetUpPlayer()** function in order to initialize the stream environment internally. This function can be called whenever it’s needed.
+To check how to set up the SDK and API usage, please refer to Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/HISPlayerSample.cs and StreamController GameObject in the Editor.
 
-For example, using the Awake function:
-
-```C#
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using HISPlayerAPI;
-
-public class AndroidStreamController : HISPlayerManager
-{
-    protected override void Awake()
-    {
-        base.Awake();
-        SetUpPlayer();
-    }
-}
-```
-
-It is strictly necessary to use SetUpPlayer before using anything else. This function initializes everything else that will be needed during the usage of HISPlayer APIs. 
-
-Remember to call the Release function after closing the app or before changing scenes in Unity for freeing the internal resources. 
-
-## 2.2 Attach Unity resources
-
-Move to **Unity Editor** to attach all the resources. The rendering system is supporting **Material**, **RawImage**, **RenderTexture** and **External Surface** Unity’s components.
-
-### <ins>Material</ins>
-Create a new Material from **Assets > Create > Material** and attach it to the GameObject that is going to be used as screen and to the stream controller component. 
-
-You can also use the **Resources > Materials > HISPlayerDefaultMaterial.mat** we provide in our package. 
-
+## HISPlayer Oculus Controllers
 <p align="center">
-<img width=40% alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/eacab2a8-7cee-4218-add9-98672f250540">
-<img width=40% alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/756b60e7-46f6-4efd-9ced-4221a2a782df">
+  <img width="100%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/d820d25f-a38b-4fa6-8bcc-8b7a8824125f">
 </p>
 
-### <ins>Raw Image</ins>
-This action will be related to Unity’s Canvas. If there is not a Canvas created yet, creating a **Raw Image** will create one automatically.
+## Sample Explanation
 
-For the creation, select **GameObject > UI > Raw Image**. Once it is created, attach it to the stream controller component
+### Editor
 
-<p align="center">
-<img width="600" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/af854bfb-215e-4ec5-bc6e-2c3ad4f0321b">
-</p>
-
-### <ins>RenderTexture</ins>
-For this you can use the RenderTexture we provide or create a RenderTexture from zero. In the first case, go to the Resources folder of our package and attach the **Resources > Materials > HISPlayerDefaultMaterialRenderTexture.mat** to the GameObject that is going to be used as screen and the **Resources > RenderTextures > HISPlayerRenderTexture.renderTexture** to the stream controller component.
-
-For creating it from zero, select **Assets > Create > Render Texutre** and then create a **Material** referencing the **Render Texture**. This last action can be done automatically by grabbing the **Render Texture** and dropping it at the end of a GameObject's Inspector with the component **Mesh Renderer** with **Material field empty**. This will create the new material inside a **Materials** folder. 
-
-Once all this process it’s done, associate the **RenderTexture** to the script component.
+Attach OVROverlay script to **RenderScreen** Quad GameObject. The video will be rendered on the Quad GameObject.
 
 <p align="center">
-<img src="https://github.com/HISPlayer/UnityiOS-SDK/assets/47497948/a0f26bc1-c7b1-432e-ad87-1a2d203d32c8">
+  <img width="70%" alt="image" src="https://github.com/user-attachments/assets/54f131a8-1331-49ed-bf17-df40311e2526">
 </p>
 
-## 2.3 Configure HISPlayer properties
+Set the following OVROverlay properties:
+- **Overlay Shape**: Quad or Equirect (for 360 degree video)
+- **Is External Surface**: True
+- **External Surface Width**: Input the desired width size. You may input the same value as the highest resolution (width) of your stream.
+- **External Surface Height**: Input the desired height size. You may input the same value as the highest resolution (height) of your stream.
+- **Is Protected Content**: True.  
 
-### <ins>License Key</ins>
-If you received a license key from HISPlayer, please input the license key in the **License Key** field. 
+In the HISPlayer multistream properties, set the **RenderMode** as **External Surface**. Please go to **StreamController** GameObject > **HISPlayerSample** script > **MultiStreamProperties** > **RenderMode** > **External Surface**.
 
 <p align="center">
-<img width="600" src="https://github.com/HISPlayer/UnityWebGL-SDK/assets/47497948/7e7ca754-8d92-4c1b-b4aa-8218b6108bbc">
+  <img width="90%" alt="image" src="https://github.com/user-attachments/assets/3aff176b-16e5-46b0-b42a-0ace964c1dcc">
 </p>
 
-If the license key is not valid, the player won't work and will throw an error message. License key is not required for Unity Editor usage.
+### Script
 
-### <ins>Multi Stream Properties</ins>
-Use Multi Stream Properties to set all the configuration needed for multi stream. It starts with 0 elements. Each element added has its own configuration for multiple players and corresponds to 1 Render Surface. If you just need a single stream, then you just need to add 1 element with 1 URL.
+Please check Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/**HISPlayerSample.cs** script and refer to the **SetUpMetaQuest()** function:
+- Find OVROverlay component from the GameObject (**RenderScreen**) that we have created.
+- When the external surface object has been created:
+  - Set the external surface to HISPlayer multistream properties's **externalSurface** object.
+  - Call SetUpPlayer() to initialize the player and load the stream. 
 
-* <span style="color:blue">**Render Mode**</span>: Select the render surface. It can be RenderTexture, Material, RawImage or NONE.
-* <span style="color:blue">**Material**</span>: Attach the **Material** asset created to the **Material** section of the element.
-* <span style="color:blue">**Raw Image**</span>: Attach the **RawImage** asset created to the **RawImage** section of the element.
-* <span style="color:blue">**Render Texture**</span>: Attach the **RenderTexture** to the **RenderTexture** section of the element.
-* <span style="color:blue">**External Surface**</span>.
-* <span style="color:blue">**URL**</span>: Add the URL associated to the stream. Each stream can have multiple URLs, therefore users can use the same render surface to play different URLs. It is also possible to add local files allocated in the device’s storage and the StreamingAssets special folder of Unity (see [Playing Local Files](/local-files.md) for more details).
-* <span style="color:blue">**URL MIME Types**</span>: Set the MIME types of each URL. It can be using URL Extension, HLS or DASH. URL Extension is set by default.
-* <span style="color:blue">**Autoplay**</span>: Property to determine whether the player will start automatically after set up.
-* <span style="color:blue">**Loop Playback**</span>: Property to loop the current playback. It’s true by default.
-* <span style="color:blue">**Auto Transition**</span>: Property to change the playback to the next video in the playlist. This action won’t have effect when loopPlayback is true. It’s false by default.
-* <span style="color:blue">**Digital Rights Management (DRM)**</span>: The DRM will be disabled by default.  See [DRM](/drm.md) for more details.
+### Non-DRM Video Playback
+If you are not playing a DRM protected content, please modify the **MultiStreamProperties** by unchecking the **Enable DRM** checkbox to disable DRM and remove all element from **Key Server URI** list.
+
 <p align="center">
-<img src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/32887298/a6cddeab-c0d2-4607-b14f-1cbaf97db56c">
+  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/5da42bb6-30bc-47c1-b4ee-70b81775286e">
 </p>
 
-## Build and Run
-Once the configuration it’s done, open 'Build Settings' and press 'Build And Run'.
+### 360 Degree Video Playback
+To render 360 degree video, you can set the OVROverlay property **Overlay Shape** to **Equirect**.
+
+<p align="center">
+  <img width="80%" alt="image" src="https://github.com/user-attachments/assets/cefa37ec-0cd1-457b-b283-5d7e7e27a697">
+</p>
+
+
+### Stereoscopic Video Playback
+To render stereoscopic Left/Right or Top/Bottom video, you can set the OVROverlay property **Use Default Rects** to false and set the **Source Rects** and **Destination Rects**.
+
+## More Information, Features and APIs
+For more information about the supported features and APIs, please refer to the following [**HISPlayer Android Documentation**](https://hisplayer.github.io/UnityAndroid-SDK/#/).
