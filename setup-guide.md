@@ -144,4 +144,4 @@ To render 360 degree video, you can set the OVROverlay property **Overlay Shape*
 To render stereoscopic Left/Right or Top/Bottom video, you can set the OVROverlay property **Use Default Rects** to false and set the **Source Rects** and **Destination Rects**.
 
 ## More Information, Features and APIs
-For more information about the supported features and APIs, please refer to the following [**HISPlayer Android Documentation**](https://hisplayer.github.io/UnityAndroid-SDK/#/).
+For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
