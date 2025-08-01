@@ -9,7 +9,7 @@ Getting started with HISPlayer consists of implementing the following steps:
  
       1.3. Configure Unity for Android
    
-2. HISPlayer Meta Quest SDK Sample Usage
+2. HISPlayer Meta Quest SDK Sample
    
     2.1 Import HISPlayer Meta Quest SDK Sample
 
