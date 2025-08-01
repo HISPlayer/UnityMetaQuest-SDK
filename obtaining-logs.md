@@ -1,4 +1,4 @@
-# Obtaining Logs
+<img width="1524" height="811" alt="image" src="https://github.com/user-attachments/assets/b137f641-4bfa-4003-a756-bdbc9e9a3140" /><img width="1524" height="811" alt="image" src="https://github.com/user-attachments/assets/f3933ac8-a16d-4a4b-af57-ace5a454502c" /># Obtaining Logs
 
 Through this guide, you will be introduced how to obtain logs which contains warning, error and general information messages. 
 
@@ -11,14 +11,14 @@ Install Android Logcat from Unity package manager to see all the logs from the A
 **Window > Package Manager > Select Packages : Unity Registry > Search Android Logcat > Install**
 
 <p align="center">
-<img src="./assets/android-logcat.png">
+<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/android-logcat.png>
 </p>
 
 Android Logcat will be run automatically when you launch the app from Unity. <br>
 Alternatively, you can start it manually : **Window > Analysis > Android Logcat**.
 
 <p align="center">
-<img src="./assets/android-logcat-view.PNG">
+<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/android-logcat-view.PNG">
 </p>
 
 ## Meta Quest Developer Hub
@@ -27,9 +27,9 @@ Alternative tool for Meta Quest is to use <a href="https://developer.oculus.com/
 **Meta Quest Developer Hub > Device Manager > Device Logs**
 
 <p align="center">
-<img src="./assets/oculus-developer-hub.PNG">
+<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/oculus-developer-hub.PNG">
 </p>
 
 <p align="center">
-<img src="./assets/oculus-log.png">
+<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/oculus-log.png">
 </p>
