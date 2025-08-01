@@ -87,12 +87,7 @@ Before using the sample, please make sure you have followed the above steps to s
   - Open File > Build Settings > Add Open Scenes
   - Build and Run
 
-To check how to set up the SDK and API usage, please refer to Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/HISPlayerSample.cs and StreamController GameObject in the Editor.
-
-## HISPlayer Oculus Controllers
-<p align="center">
-  <img width="100%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/d820d25f-a38b-4fa6-8bcc-8b7a8824125f">
-</p>
+To check how to set up the SDK and API usage, please refer to Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/**HISPlayerSample.cs** and **StreamController** GameObject in the Editor.
 
 ## Sample Explanation
 
