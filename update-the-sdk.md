@@ -22,7 +22,7 @@ Select the package of HISPlayer SDK and import it.
 **Assets > Import Package > Custom Package > HISPlayerSDK.unitypackage**
 
 <p align="center">
-<img width="450" src="./assets/import-package.png">
+<img width="450" src="https://hisplayer.github.io/UnityAndroid-SDK/assets/import-package.png">
 </p>
 
 <br>
