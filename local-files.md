@@ -90,15 +90,3 @@ For example below *stream.m3u8* includes the following : `#EXT-X-KEY:METHOD=AES-
 <p align="center">
   <img  width=60% src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/32887298/227d6a63-128e-45f7-9275-7b2767a14087">
 </p>
-
-## Device’s local videos
-In order to add videos from the device, keep in mind the SDK is taking the root path of the phone storage. The next step is to pass the name (**with the extension**) to the Multi Stream Properties.
-
-<p align="center">
-<img src="./assets/local-content.png">
-</p>
-
-In the case of exploring subfolders of the devices, it’s enough adding the subfolder at the beginning of the path, e.g., using a **WhatsApp video** it is possible to provide the following path: 
-
-**WhatsApp/Media/WhatsApp Video/video.mp4**
-&nbsp;
