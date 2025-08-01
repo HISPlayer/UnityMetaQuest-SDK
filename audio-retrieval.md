@@ -6,11 +6,6 @@ It is possible to retrieve the raw Audio PCM data and connect it to Unity Audio 
 #### Unity version
 - Supported Unity versions: 2022, 2023, Unity 6
 
-#### HISPlayer SDK version
-- HISPlayer SDK version: 4.9.0 and above
-
-<br>
-
 It’s required to set **UnityAudio** property in MultistreamProperties to True through Unity editor or script.
 
 <p align="center">
