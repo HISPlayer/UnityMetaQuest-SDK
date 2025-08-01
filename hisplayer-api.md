@@ -18,7 +18,7 @@ The following public APIs are provided by **HISPlayerManager**:
     * **public list \<string\> urlMimeTypes**: List of the HISPlayerMimeTypes attached to each URL from the url list.
     * **public bool autoPlay**: If true, the players will start playing automatically after set-up.
     * **public bool EnableRendering**: Determines if the stream will be rendered or not. The value can change in every moment for toggling between render or non-render mode. If true, the player will be rendered. It only can change in runtime.
-    * **public bool FlipTextureVertically**: Flip the texture of the stream vertically. This value should be called before **SetUpPlayer**  or **AddStream** functions. Only supported on Android.
+    * **public bool FlipTextureVertically**: Flip the texture of the stream vertically. This applies for Material, RenderTexture and RawImage. This value should be called before **SetUpPlayer**  or **AddStream** functions. Only supported on Android.
     * **public bool LoopPlayback (Read-only)**: Loop the current playback. It's true by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
     * **public bool AutoTransition (Read-only)**: Change the playback to the next video in the playlist. This action won't have effect when loopPlayback is true. It's false by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
     * **public bool UnityAudio (Read-only)**: Retrieves the audio data that can be connected to Unity AudioSource through OnAudioFilterRead() instead of direct device speaker output. Calling SetVolume API to control the audio volume will not work, please control the corresponding Unity Audio Source volume instead. It's false by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
@@ -70,6 +70,13 @@ The following public APIs are provided by **HISPlayerManager**:
    * **HISPLAYER_ERROR_PLAYBACK_DURATION_LIMIT_REACHED** (no function on this)
    * **HISPLAYER_ERROR_PLATFORM_NOT_REGISTERED** (no function on this)
    * **HISPLAYER_ERROR_NETWORK_FAILED**
+
+ * **public enum LogLevel**: The current logging level to filter which log messages are output.
+   * DEBUG (Level 0): Logs messages useful for debugging and troubleshooting purposes, typically only visible during development.
+   * INFO (Level 1): Provides general informational messages about the application’s execution.
+   * WARNING (Level 2): Indicates potential issues or situations that may require attention.
+   * ERROR (Level 3): Indicates critical errors that may prevent the application from functioning correctly.
+   * NONE (Level 4): No log messages will appear.
    
 * **public struct HISPlayerEventInfo**: The information of the triggered event.
    * **public HISPlayerEvent eventType**: The type of the event triggered.
@@ -434,6 +441,14 @@ Disables the ABR to prevent the player from changing tracks regardless of bandwi
 #### bool IsPlaying(int playerIndex)
 Check whether the certain player is playing. Returns True if the player is playing. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
 
+#### bool IsMuted(int playerIndex)
+Check whether the certain player is muted. Returns True if the player is muted. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
+#### float GetVolume(int playerIndex)
+Get the current audio volume of a certain player. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
+#### string GetWidevineSecurityLevel(int playerIndex). Get the security level of the loaded Widevine DRM protected content as a string. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
 #### float[][] GetAudioData(int playerIndex, int sampleSizePerChannel)
 Get the audio PCM data of each channel in float array. The order of the channel is the same as the order of the stream's audio channel layout, e.g. C L R Ls Rs. The **playerIndex** is the index of the player in multistream properties, the **sampleSizePerChannel** is the requested data size of each audio channel. Please use this API when **UnityAudio** is set to true.
 
@@ -442,3 +457,18 @@ Fill the audio buffer with new audio PCM data. The **playerIndex** is the index 
 
 #### int GetAudioSessionId(int playerIndex)
 Provide the audio session identifier. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
+#### void SynchronizeMultiStreams(int primaryPlayerIndex, int secondaryPlayerIndex, long offsetMs = 0)
+Synchronizes the playback of secondary stream following the primary stream. The **primaryPlayerIndex** is the index of the main stream, the **secondaryIndexPlayer** is the index of the second stream that will be synchronized following the main stream. The **offsetMs** (Optional) is the time offset of the secondary player to synchronize with main player in milliseconds. Default value is 0 means both players playback are synchronized to the same timestamp. Put positive value if the secondary player should be played from a point ahead the main player’s current position. Put negative value if the secondary player should be played from a point behind the main player’s current position. The secondary stream will automatically seek following the main stream current time plus the offset. You may call this API after calling **SetUpPlayer**.
+
+#### void SetLogLevel(LogLevel logLevel)
+Establishes the amount of logs to be shown. The log levels are represented as an enum of integers. Every type of log whose representative integer is greater or equal to the established log level will be shown. This API should be called before **SetUpPlayer** or **AddStream** APIs.
+
+#### string[] GetAvailableCodecs()
+Get the available codecs list on the device. You may call this API before or after **SetUpPlayer**.
+
+#### void SetExternalSurface(int playerIndex, IntPtr surface)
+Set the external surface of a certain player to be used. This API will change the internal external surface if it already has been set before. Use this API when you change the overlay shape by passing the new surface. Please call this API after **OVROverlay.ExternalSurfaceObjectCreated** callback has been triggered and after **SetUpPlayer**.
+
+#### void ReleaseExternalSurface(int playerIndex)
+Release the external surface from a certain player. This API is optional, only call it before you setting OVROverlay enabled to false or before destroying it during runtime. Please call this API after **SetUpPlayer**.
