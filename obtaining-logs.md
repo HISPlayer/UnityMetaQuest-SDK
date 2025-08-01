@@ -1,4 +1,4 @@
-<img width="1524" height="811" alt="image" src="https://github.com/user-attachments/assets/b137f641-4bfa-4003-a756-bdbc9e9a3140" /><img width="1524" height="811" alt="image" src="https://github.com/user-attachments/assets/f3933ac8-a16d-4a4b-af57-ace5a454502c" /># Obtaining Logs
+# Obtaining Logs
 
 Through this guide, you will be introduced how to obtain logs which contains warning, error and general information messages. 
 
@@ -11,7 +11,7 @@ Install Android Logcat from Unity package manager to see all the logs from the A
 **Window > Package Manager > Select Packages : Unity Registry > Search Android Logcat > Install**
 
 <p align="center">
-<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/android-logcat.png>
+<img src="https://hisplayer.github.io/UnityAndroid-SDK/assets/android-logcat.png">
 </p>
 
 Android Logcat will be run automatically when you launch the app from Unity. <br>
