@@ -31,7 +31,7 @@ Open **Edit > Player Settings > MetaXR**, select the Android platform and clik "
 <img width="90%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/691d9de5-3874-4b6a-bb1e-3b2981020590">
 </p>
 
-In XR Plug-in Management, please make sure that you have the **OpenXR** option checked. Otherwise, when you run the application, it will show a 2D window without XR environment.
+In XR Plug-in Management, please make sure that you have the **OpenXR** option checked (or Oculus for older Meta XR SDK version). Otherwise, when you run the application, it will show a 2D window without XR environment.
   
   - **Edit > Project Settings > XR Plug-in Management**
 
