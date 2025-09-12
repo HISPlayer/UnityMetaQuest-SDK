@@ -31,11 +31,13 @@ Open **Edit > Player Settings > MetaXR**, select the Android platform and clik "
 <img width="90%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/691d9de5-3874-4b6a-bb1e-3b2981020590">
 </p>
 
-In XR Plug-in Management, please make sure that you have the **Oculus** option checked. Otherwise, when you run the application, it will show a 2D window without XR environment.
+In XR Plug-in Management, please make sure that you have the **OpenXR** option checked. Otherwise, when you run the application, it will show a 2D window without XR environment.
   
   - **Edit > Project Settings > XR Plug-in Management**
 
-<img width="1040" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/beb2689c-d884-495c-9fa4-07b70014dfed">
+<p align="center">
+<img width="60%" alt="image" src="https://github.com/user-attachments/assets/3d1372e8-ee40-41fd-8ddd-d8d360a47534">
+</p>
 
 ## 1.2 Import HISPlayer SDK
 
