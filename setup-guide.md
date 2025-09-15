@@ -84,7 +84,7 @@ Before using the sample, please make sure you have followed the above steps to s
   - Import HISPlayer SDK
   - Import HISPlayer Meta Quest SDK Sample
   - Open Assets/HISPlayerMetaQuestSample/Scenes/HISPlayerMetaQuestSDKSample.unity
-  - Import TextMeshPro
+  - Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources
   - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**
   - Open File > Build Settings > Add Open Scenes
   - Build and Run
