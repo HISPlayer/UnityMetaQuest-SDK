@@ -79,4 +79,4 @@
 
 ### Version 4.5.2
 ##### November 28, 2024
-- Initial release of Meta Quest SDK.
+- Initial release of Unity Meta Quest SDK as an upgrade from Unity AllPlatforms SDK.
