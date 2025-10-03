@@ -2,6 +2,7 @@
 - [Quickstart Guide](/setup-guide.md)
 - [HISPlayer API](/hisplayer-api.md)
 - [DRM](/drm.md)
+- [Material / RawImage / RenderTexture Rendering](/rendermodes.md)
 - [Playing Local Files](/local-files.md)
 - [Audio Data Retrieval and Unity Audio Connection](/audio-retrieval.md)
 - [Controlling ABR](/controlling-abr.md)
