@@ -23,9 +23,9 @@ First, please configure the Unity project for Oculus by following this [Tutorial
 <img width="605" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/b4e362ba-f3d1-4d07-a46b-7a76e73d30fb">
 </p>
 
-#### Oculus platform
+#### Meta XR Setup Tool
 
-Open **Edit > Player Settings > MetaXR**, select the Android platform and clik "**Select All**" and "**Apply All**" in order to set up all the Oculus settings. 
+Open **Edit > Player Settings > MetaXR**, select the Android platform and clik "**Select All**" and "**Apply All**" in order to set up all the Meta XR settings. 
 
 <p align="center">
 <img width="90%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/691d9de5-3874-4b6a-bb1e-3b2981020590">
@@ -134,7 +134,9 @@ Next, please refer to the **SetUpMetaQuest()** function:
 - Find OVROverlay component from the GameObject (**RenderScreen**) that we have created.
 - When the external surface object has been created:
   - Set the external surface to HISPlayer multistream properties's **externalSurface** object.
-  - Call **SetUpPlayer()** to initialize the player and load the stream. 
+  - Call **SetUpPlayer()** to initialize the player and load the stream.
+ 
+It is necessary to call SetUpPlayer() before calling other APIs. This function initializes everything else that will be needed during the usage of HISPlayer APIs.  
 
 ### Non-DRM Video Playback
 If you are not playing a DRM protected content, please modify the **MultiStreamProperties** by unchecking the **Enable DRM** checkbox to disable DRM and remove all element from **Key Server URI** list.
@@ -153,6 +155,7 @@ To render 360 degree video, you can set the OVROverlay property **Overlay Shape*
 
 ### Stereoscopic Video Playback
 To render stereoscopic Left/Right or Top/Bottom video, you can set the OVROverlay property **Use Default Rects** to false and set the **Source Rects** and **Destination Rects**.
+
 
 ## More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
