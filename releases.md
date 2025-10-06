@@ -1,5 +1,11 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 4.7.13
+##### October 6, 2025
+- [**Improvement**] Optimized the ordering of the displayed video frames with Vulkan material/RenderTexture/RawImage rendering.
+- [**Improvement**] Optimized the playback performance when locking and unlocking the Quest device.
+- [**Improvement**] Optimized the playback performance with Quest Dynamic Resolution Scaling enabled.
+
 ### Version 4.7.12
 ##### September 19, 2025
 - [**Improvement**] Optimized performance when locking and unlocking Quest device.
