@@ -1,5 +1,9 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 4.7.15
+##### November 28, 2025
+- [**Added**] MV-HEVC codec for stereoscopic video support.
+
 ### Version 4.7.14
 ##### November 6, 2025
 - [**Improvement**] Optimized Vulkan material/RenderTexture/RawImage rendering with Vulkan validation layers enabled.
