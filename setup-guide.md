@@ -158,7 +158,10 @@ To render 360 degree video, you can set the OVROverlay property **Overlay Shape*
 
 ### Stereoscopic Video Playback
 To render stereoscopic Left/Right or Top/Bottom video, you can set the "Stereo Mode" property "**Left Right**" or "**Top Bottom**".
-![alt text](image-3.png)
+
+<p align="center">
+  <img width="80%" alt="image" src="https://github.com/user-attachments/assets/1043b7e1-c9bb-441c-ab68-4cf63f1e05ba">
+</p>
 
 ## More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
