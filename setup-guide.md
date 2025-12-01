@@ -67,16 +67,13 @@ Open the window **Tools > HISPlayer** located in the upper side of the screen > 
 Setting **"Plugins folder"** will create **mainTemplate.gradle** and **gradleTemplate.properties** in your ProjectRoot\Assets\Plugins\Android. Please make sure you use the correct **mainTemplate.gradle** that is generated from our SDK. If you need to modify it, please make sure the dependencies and configurations from HISPlayer SDK's mainTemplate.gradle exist in your modified gradle file.
 
 #### Android Target API Level
-It is recommended to set Target API Level to 35 or higher. 
+It is recommended to set Target API Level to 33 or higher. By selecting Android target 33, Unity is going to ask you to update (in the case you don't have the SDK installed). Please, press "Update Android SDK" button.
 
-![alt text](image.png)
-Open **Edit > Player Settings > MetaXR** again, select right end menu button and click "**Go to Source Code**"
+<p align="center">
+<img width="292" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/d4cfb0b6-5d5f-4233-bd42-b454ae64925e">
+</p>
 
-![alt text](image-1.png)
-find "**targetAPILevel**" variable and change the value to "**35**" and save.
-
-![alt text](image-2.png)
-Confirm that suggested target API is 35 and click "**Apply**".
+Alternatively, you may set the Target API level to 33 or higher in the Unity project settings.
  
 ## 2.1 Import HISPlayer Meta Quest SDK Sample
 
@@ -157,11 +154,8 @@ To render 360 degree video, you can set the OVROverlay property **Overlay Shape*
 
 
 ### Stereoscopic Video Playback
-To render stereoscopic Left/Right or Top/Bottom video, you can set the "Stereo Mode" property "**Left Right**" or "**Top Bottom**".
+To render stereoscopic Left/Right or Top/Bottom video, you can set the OVROverlay property **Use Default Rects** to false and set the **Source Rects** and **Destination Rects**.
 
-<p align="center">
-  <img width="80%" alt="image" src="https://github.com/user-attachments/assets/1043b7e1-c9bb-441c-ab68-4cf63f1e05ba">
-</p>
 
 ## More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
