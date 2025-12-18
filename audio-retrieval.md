@@ -1,6 +1,6 @@
 # Audio Data Retrieval and Unity Audio Connection
 
-It is possible to retrieve the raw Audio PCM data and connect it to Unity Audio Source component through [OnAudioFilterRead()](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/MonoBehaviour.OnAudioFilterRead.html). 
+It is possible to retrieve the raw Audio PCM data and connect it to Unity Audio Source component through [OnAudioFilterRead()](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/MonoBehaviour.OnAudioFilterRead.html) to make spatial/3D audio. 
 
 ## Requirements
 #### Unity version
@@ -25,7 +25,7 @@ Get the audio PCM data of each channel in float array. The order of the channel 
 #### void FillAudioData(int playerIndex, float[] audioData, int channelIndex)
 Fill the audio buffer with new audio PCM data. The **playerIndex** is the index of the player in multistream properties. The **audioData** is the audio buffer that will be filled with new audio data. The **channelIndex** is the index of the audio channel. The order of the channel index must be the same as the order of the stream's audio channel layout, e.g. C=0, L=1, R=2, Ls=3, Rs=4. Please use this API when **UnityAudio** is set to true.
 
-## HISPlayer Android Spatial Audio Sample
+## HISPlayer Meta Quest Spatial Audio Sample
 
 Please download the sample here: [HISPlayer_MetaQuest_SpatialAudio_Sample.unitypackage](https://downloads.hisplayer.com/Unity/AllPlatforms/HISPlayer_MetaQuest_OVROverlay_SpatialAudio_Sample.unitypackage) and import it to your Unity project.
 
