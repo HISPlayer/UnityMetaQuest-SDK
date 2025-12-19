@@ -12,7 +12,12 @@ It’s required to set **AmbisonicAudio** property in MultistreamProperties thro
 <img width=60% src="https://github.com/user-attachments/assets/631d643c-051c-477e-8345-527a7dbcc21d">
 </p>
 
-Ambisonics audio cannot be combined with [UnityAudio](./audio-retrieval.md) usage. 
+* Ambisonics audio cannot be combined with [UnityAudio](./audio-retrieval.md) usage. 
+* Only Opus audio codec is supported. Opus is the recommended codec for Ambisonic audio.
+* MKV video container is recommended.
+* Recommended audio sample rate is 48000Hz.
+* Multistream mode with ambisonics is not supported.
+
 For more details, please refer to below APIs section and HISPlayer Meta Quest Ambisonic Sample section.
 
 ## Related APIs
