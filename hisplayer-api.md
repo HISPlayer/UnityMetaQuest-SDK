@@ -78,11 +78,11 @@ The following public APIs are provided by **HISPlayerManager**:
    * **HISPLAYER_ERROR_NETWORK_FAILED**
 
  * **public enum LogLevel**: The current logging level to filter which log messages are output.
-   * DEBUG (Level 0): Logs messages useful for debugging and troubleshooting purposes, typically only visible during development.
-   * INFO (Level 1): Provides general informational messages about the application’s execution.
-   * WARNING (Level 2): Indicates potential issues or situations that may require attention.
-   * ERROR (Level 3): Indicates critical errors that may prevent the application from functioning correctly.
-   * NONE (Level 4): No log messages will appear.
+   * **DEBUG** (Level 0): Logs messages useful for debugging and troubleshooting purposes, typically only visible during development.
+   * **INFO** (Level 1): Provides general informational messages about the application’s execution.
+   * **WARNING** (Level 2): Indicates potential issues or situations that may require attention.
+   * **ERROR** (Level 3): Indicates critical errors that may prevent the application from functioning correctly.
+   * **NONE** (Level 4): No log messages will appear.
 
  * **public enum HISPlayerAmbisonicAudio**: Type of ambisonics audio format:
    * **NONE**: No ambisonics audio
