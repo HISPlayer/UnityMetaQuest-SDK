@@ -5,6 +5,7 @@
 - [Material / RawImage / RenderTexture Rendering](/rendermodes.md)
 - [Playing Local Files](/local-files.md)
 - [Audio Data Retrieval and Unity Audio Connection](/audio-retrieval.md)
+- [Ambisonics Audio](/ambisonic.md)
 - [Controlling ABR](/controlling-abr.md)
 - [Obtaining Logs](/obtaining-logs.md)
 - [Update the SDK](/update-the-sdk.md)
