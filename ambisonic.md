@@ -18,19 +18,19 @@ For more details, please refer to below APIs section and HISPlayer Meta Quest Am
 ## Related APIs
 
 **public enum HISPlayerAmbisonicAudio**: Type of ambisonics audio format:
-   * NONE: No ambisonics audio
-   * AMBIX_4Channels: 4 channels of first order ambiX
-   * AMBIX_4Channels_2HeadLockedChannels: 4 channels of first order ambiX with 2 channels of head-locked audio
-   * AMBIX_9Channels: 9 channels of second order ambiX
-   * AMBIX_9Channels_2HeadLockedChannels: 9 channels of second order ambiX with 2 channels of head-locked audio
-   * AMBIX_16Channels: 16 channels of third order ambiX
-   * AMBIX_16Channels_2HeadLockedChannels: 16 channels of third order ambiX with 2 channels of head-locked audio
-   * TBE_4Channels: 4 channels of hybrid TBE ambisonics
-   * TBE_4Channels_2HeadLockedChannels: 4 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
-   * TBE_6Channels: 6 channels of hybrid TBE ambisonics
-   * TBE_6Channels_2HeadLockedChannels: 6 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
-   * TBE_8Channels: 8 channels of hybrid TBE ambisonics
-   * TBE_8Channels_2HeadLockedChannels: 8 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * **NONE**: No ambisonics audio
+   * **AMBIX_4Channels**: 4 channels of first order ambiX
+   * **AMBIX_4Channels_2HeadLockedChannels**: 4 channels of first order ambiX with 2 channels of head-locked audio
+   * **AMBIX_9Channels**: 9 channels of second order ambiX
+   * **AMBIX_9Channels_2HeadLockedChannels**: 9 channels of second order ambiX with 2 channels of head-locked audio
+   * **AMBIX_16Channels**: 16 channels of third order ambiX
+   * **AMBIX_16Channels_2HeadLockedChannels**: 16 channels of third order ambiX with 2 channels of head-locked audio
+   * **TBE_4Channels**: 4 channels of hybrid TBE ambisonics
+   * **TBE_4Channels_2HeadLockedChannels**: 4 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * **TBE_6Channels**: 6 channels of hybrid TBE ambisonics
+   * **TBE_6Channels_2HeadLockedChannels**: 6 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * **TBE_8Channels**: 8 channels of hybrid TBE ambisonics
+   * **TBE_8Channels_2HeadLockedChannels**: 8 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
 
 **public HISPlayerAmbisonicAudio AmbisonicAudio**: Ambisonics audio supporting ambiX format from first order to 3rd order, and TBE format. Enabling Ambisonic will disable Unity Audio. It's set to None or disabled by default. To modify this value, please use the Editor.
 
@@ -38,7 +38,7 @@ For more details, please refer to below APIs section and HISPlayer Meta Quest Am
 
 Before using the sample, make sure that you have imported HISPlayer SDK. If not, please follow the [**Quickstart Guide**](./setup-guide.md).
 
-Please download the sample here: [HISPlayer_MetaQuest_Ambisonic_Sample.unitypackage](https://downloads.hisplayer.com/Unity/AllPlatforms/HISPlayerMetaQuestAmbisonicSample.unitypackage) and import it to your Unity project.
+Please download the sample here: [HISPlayerMetaQuestAmbisonicSample.unitypackage](https://downloads.hisplayer.com/Unity/Quest/HISPlayerMetaQuestAmbisonicSample.unitypackage) and import it to your Unity project.
 
 * Open **Assets\HISPlayerMetaQuestAmbisonicSample\Scenes\HISPlayerMetaQuestAmbisonicSample.unity**.
 * Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources.
