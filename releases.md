@@ -1,5 +1,16 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.0.0
+##### December 19, 2025
+- [**Added**] Ambisonic audio supporting ambiX format from first order to 3rd order, and TBE format.
+- [**Added**] SetStereoscopicRendering API to set stereoscopic rendering side by side or top/bottom for external surface rendering mode.
+- [**Added**] GetProgramDateTimeEpoch and GetProgramDateTimeString APIs to obtain the EXT-X-PROGRAM-DATE-TIME information of the current frame from HLS streams.
+- [**Improvement**] Improved the UI appearance of HISPlayerManager in the inspector.
+- [**Improvement**] Improved adding stream at runtime when initializing streams without predefined URLs.
+- [**Improvement**] Optimized render texture cleaning when release player.
+- [**Improvement**] Optimized playback repeat mode.
+- [**Improvement**] Optimized stop function.
+
 ### Version 4.7.14
 ##### November 6, 2025
 - [**Improvement**] Optimized Vulkan material/RenderTexture/RawImage rendering with Vulkan validation layers enabled.
