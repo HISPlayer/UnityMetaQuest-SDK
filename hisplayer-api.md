@@ -22,7 +22,7 @@ The following public APIs are provided by **HISPlayerManager**:
     * **public bool LoopPlayback (Read-only)**: Loop the current playback. It's true by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
     * **public bool AutoTransition (Read-only)**: Change the playback to the next video in the playlist. This action won't have effect when loopPlayback is true. It's false by default. To modify this value, please use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
     * **public bool UnityAudio (Read-only)**: Retrieves the audio data that can be connected to Unity AudioSource through OnAudioFilterRead() instead of direct device speaker output. Calling SetVolume API to control the audio volume will not work, please control the corresponding Unity Audio Source volume instead. It's false by default. To modify this value, please use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
-    * **public HISPlayerAmbisonicAudio AmbisonicAudio (Read-only)**: Ambisonic audio supporting ambiX format from first order to 3rd order, and TBE format. Enabling Ambisonic will disable Unity Audio. It's set to None or disabled by default. To modify this value, please use the Editor.
+    * **public HISPlayerAmbisonicAudio AmbisonicAudio (Read-only)**: Ambisonics audio supporting ambiX format from first order to 3rd order, and TBE format. Enabling Ambisonic will disable Unity Audio. It's set to None or disabled by default. To modify this value, please use the Editor.
     * **public List \<string\> keyServerURI**: List of the DRM license key for each URL.
     * **public List \<DRM_Token\> DRMTokens**: List of the DRM tokens for each URL.
 
@@ -78,7 +78,14 @@ The following public APIs are provided by **HISPlayerManager**:
    * **HISPLAYER_ERROR_NETWORK_FAILED**
 
  * **public enum LogLevel**: The current logging level to filter which log messages are output.
-   * NONE: No ambisonic audio
+   * DEBUG (Level 0): Logs messages useful for debugging and troubleshooting purposes, typically only visible during development.
+   * INFO (Level 1): Provides general informational messages about the application’s execution.
+   * WARNING (Level 2): Indicates potential issues or situations that may require attention.
+   * ERROR (Level 3): Indicates critical errors that may prevent the application from functioning correctly.
+   * NONE (Level 4): No log messages will appear.
+
+ * **public enum HISPlayerAmbisonicAudio**: Type of ambisonics audio format:
+   * NONE: No ambisonics audio
    * AMBIX_4Channels: 4 channels of first order ambiX
    * AMBIX_4Channels_2HeadLockedChannels: 4 channels of first order ambiX with 2 channels of head-locked audio
    * AMBIX_9Channels: 9 channels of second order ambiX
@@ -91,13 +98,6 @@ The following public APIs are provided by **HISPlayerManager**:
    * TBE_6Channels_2HeadLockedChannels: 6 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
    * TBE_8Channels: 8 channels of hybrid TBE ambisonics
    * TBE_8Channels_2HeadLockedChannels: 8 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
-
- * **public enum HISPlayerAmbisonicAudio**: Type of ambisonic audio format:
-   * DEBUG (Level 0): Logs messages useful for debugging and troubleshooting purposes, typically only visible during development.
-   * INFO (Level 1): Provides general informational messages about the application’s execution.
-   * WARNING (Level 2): Indicates potential issues or situations that may require attention.
-   * ERROR (Level 3): Indicates critical errors that may prevent the application from functioning correctly.
-   * NONE (Level 4): No log messages will appear.
 
 * **public struct HISPlayerEventInfo**: The information of the triggered event.
    * **public HISPlayerEvent eventType**: The type of the event triggered.
