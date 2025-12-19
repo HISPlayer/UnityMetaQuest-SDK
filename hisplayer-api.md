@@ -85,19 +85,19 @@ The following public APIs are provided by **HISPlayerManager**:
    * NONE (Level 4): No log messages will appear.
 
  * **public enum HISPlayerAmbisonicAudio**: Type of ambisonics audio format:
-   * NONE: No ambisonics audio
-   * AMBIX_4Channels: 4 channels of first order ambiX
-   * AMBIX_4Channels_2HeadLockedChannels: 4 channels of first order ambiX with 2 channels of head-locked audio
-   * AMBIX_9Channels: 9 channels of second order ambiX
-   * AMBIX_9Channels_2HeadLockedChannels: 9 channels of second order ambiX with 2 channels of head-locked audio
-   * AMBIX_16Channels: 16 channels of third order ambiX
-   * AMBIX_16Channels_2HeadLockedChannels: 16 channels of third order ambiX with 2 channels of head-locked audio
-   * TBE_4Channels: 4 channels of hybrid TBE ambisonics
-   * TBE_4Channels_2HeadLockedChannels: 4 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
-   * TBE_6Channels: 6 channels of hybrid TBE ambisonics
-   * TBE_6Channels_2HeadLockedChannels: 6 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
-   * TBE_8Channels: 8 channels of hybrid TBE ambisonics
-   * TBE_8Channels_2HeadLockedChannels: 8 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * **NONE**: No ambisonics audio
+   * **AMBIX_4Channels**: 4 channels of first order ambiX
+   * **AMBIX_4Channels_2HeadLockedChannels**: 4 channels of first order ambiX with 2 channels of head-locked audio
+   * **AMBIX_9Channels**: 9 channels of second order ambiX
+   * **AMBIX_9Channels_2HeadLockedChannels**: 9 channels of second order ambiX with 2 channels of head-locked audio
+   * **AMBIX_16Channels**: 16 channels of third order ambiX
+   * **AMBIX_16Channels_2HeadLockedChannels**: 16 channels of third order ambiX with 2 channels of head-locked audio
+   * **TBE_4Channels**: 4 channels of hybrid TBE ambisonics
+   * **TBE_4Channels_2HeadLockedChannels**: 4 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * **TBE_6Channels**: 6 channels of hybrid TBE ambisonics
+   * **TBE_6Channels_2HeadLockedChannels**: 6 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * **TBE_8Channels**: 8 channels of hybrid TBE ambisonics
+   * **TBE_8Channels_2HeadLockedChannels**: 8 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
 
 * **public struct HISPlayerEventInfo**: The information of the triggered event.
    * **public HISPlayerEvent eventType**: The type of the event triggered.
@@ -501,4 +501,7 @@ Set the external surface of a certain player to be used. This API will change th
 Release the external surface from a certain player. This API is optional, only call it before you setting OVROverlay enabled to false or before destroying it during runtime. Please call this API after **SetUpPlayer**.
 
 #### void SetStereoscopicRendering(int playerIndex, HISPlayerStereoMode stereoMode, ref bool overrideRect, ref Rect srcRectLeft, ref Rect srcRectRight, ref Rect destRectLeft, ref Rect destRectRight)
-Set stereoscopic rendering side by side or top/bottom. Only supported with external surface rendering mode. You may call this API before or after **SetUpPlayer**. The parameters marked with ref keyword can be retrieved from public properties of OVROverlay. Usage example: `SetStereoscopicRendering(streamIndex, HISPlayerStereoMode.LeftRight, ref overlay.overrideTextureRectMatrix, ref overlay.srcRectLeft, ref overlay.srcRectRight, ref overlay.destRectLeft, ref overlay.destRectLeft);`.
+Set stereoscopic rendering side by side or top/bottom. Only supported with external surface rendering mode. You may call this API before or after **SetUpPlayer**. The parameters marked with ref keyword can be retrieved from public properties of OVROverlay. Usage example: 
+```
+SetStereoscopicRendering(streamIndex, HISPlayerStereoMode.LeftRight, ref overlay.overrideTextureRectMatrix, ref overlay.srcRectLeft, ref overlay.srcRectRight, ref overlay.destRectLeft, ref overlay.destRectLeft);
+```
