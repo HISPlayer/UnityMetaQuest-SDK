@@ -20,8 +20,9 @@ The following public APIs are provided by **HISPlayerManager**:
     * **public bool EnableRendering**: Determines if the stream will be rendered or not. The value can change in every moment for toggling between render or non-render mode. If true, the player will be rendered. It only can change in runtime.
     * **public bool FlipTextureVertically**: Flip the texture of the stream vertically. This applies for Material, RenderTexture and RawImage. This value should be called before **SetUpPlayer**  or **AddStream** functions. Only supported on Android.
     * **public bool LoopPlayback (Read-only)**: Loop the current playback. It's true by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
-    * **public bool AutoTransition (Read-only)**: Change the playback to the next video in the playlist. This action won't have effect when loopPlayback is true. It's false by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
-    * **public bool UnityAudio (Read-only)**: Retrieves the audio data that can be connected to Unity AudioSource through OnAudioFilterRead() instead of direct device speaker output. Calling SetVolume API to control the audio volume will not work, please control the corresponding Unity Audio Source volume instead. It's false by default. To modify this value, please, use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
+    * **public bool AutoTransition (Read-only)**: Change the playback to the next video in the playlist. This action won't have effect when loopPlayback is true. It's false by default. To modify this value, please use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
+    * **public bool UnityAudio (Read-only)**: Retrieves the audio data that can be connected to Unity AudioSource through OnAudioFilterRead() instead of direct device speaker output. Calling SetVolume API to control the audio volume will not work, please control the corresponding Unity Audio Source volume instead. It's false by default. To modify this value, please use the Editor or the constructor **StreamProperties(loopPlayback, autoTransition, unityAudio)**.
+    * **public HISPlayerAmbisonicAudio AmbisonicAudio (Read-only)**: Ambisonics audio supporting ambiX format from first order to 3rd order, and TBE format. Enabling Ambisonic will disable Unity Audio. It's set to None or disabled by default. To modify this value, please use the Editor.
     * **public List \<string\> keyServerURI**: List of the DRM license key for each URL.
     * **public List \<DRM_Token\> DRMTokens**: List of the DRM tokens for each URL.
 
@@ -35,7 +36,12 @@ The following public APIs are provided by **HISPlayerManager**:
     * **RawImage**
     * **NONE**
     * **ExternalSurface**
- 
+
+* **public enum HISPlayerStereoMode**: Type of stereoscopic mode for external surface rendering:
+    * **None**
+    * **LeftRight**
+    * **TopBottom**
+
 * **public enum HISPlayerMimeTypes**: The list of the supported MIME Types:
    * **URL_EXTENSION**: The MIME type will be extracted from the URL extension
    * **HLS**: The "application/x-mpegURL" MIME type will be used
@@ -77,7 +83,22 @@ The following public APIs are provided by **HISPlayerManager**:
    * WARNING (Level 2): Indicates potential issues or situations that may require attention.
    * ERROR (Level 3): Indicates critical errors that may prevent the application from functioning correctly.
    * NONE (Level 4): No log messages will appear.
-   
+
+ * **public enum HISPlayerAmbisonicAudio**: Type of ambisonics audio format:
+   * NONE: No ambisonics audio
+   * AMBIX_4Channels: 4 channels of first order ambiX
+   * AMBIX_4Channels_2HeadLockedChannels: 4 channels of first order ambiX with 2 channels of head-locked audio
+   * AMBIX_9Channels: 9 channels of second order ambiX
+   * AMBIX_9Channels_2HeadLockedChannels: 9 channels of second order ambiX with 2 channels of head-locked audio
+   * AMBIX_16Channels: 16 channels of third order ambiX
+   * AMBIX_16Channels_2HeadLockedChannels: 16 channels of third order ambiX with 2 channels of head-locked audio
+   * TBE_4Channels: 4 channels of hybrid TBE ambisonics
+   * TBE_4Channels_2HeadLockedChannels: 4 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * TBE_6Channels: 6 channels of hybrid TBE ambisonics
+   * TBE_6Channels_2HeadLockedChannels: 6 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+   * TBE_8Channels: 8 channels of hybrid TBE ambisonics
+   * TBE_8Channels_2HeadLockedChannels: 8 channels of hybrid TBE ambisonics and 2 channels of head-locked stereo audio
+
 * **public struct HISPlayerEventInfo**: The information of the triggered event.
    * **public HISPlayerEvent eventType**: The type of the event triggered.
    * **public int playerIndex**: The index of the player where the event is triggered.
@@ -363,6 +384,12 @@ Provides information about the timeline position in **milliseconds**, of the cur
 #### long GetVideoDuration(int playerIndex)
 Provides information about the total duration in **milliseconds**, of the current video of a certain player. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
 
+#### long GetProgramDateTimeEpoch(int playerIndex)
+Get the epoch time (in seconds since 1970) of the first EXT-X-PROGRAM-DATE-TIME tag of a certain player in seconds. Only available for HLS manifests that have the tag information. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
+#### string GetProgramDateTimeString(int playerIndex)
+Get the EXT-X-PROGRAM-DATE-TIME value seen in the manifest of a certain player. Only available for HLS manifests that have the tag information. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
 #### HISPlayerTrack[] GetTracks(int playerIndex)
 Provides the list of the video tracks of the current video playing on a certain stream. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
 
@@ -472,3 +499,6 @@ Set the external surface of a certain player to be used. This API will change th
 
 #### void ReleaseExternalSurface(int playerIndex)
 Release the external surface from a certain player. This API is optional, only call it before you setting OVROverlay enabled to false or before destroying it during runtime. Please call this API after **SetUpPlayer**.
+
+#### void SetStereoscopicRendering(int playerIndex, HISPlayerStereoMode stereoMode, ref bool overrideRect, ref Rect srcRectLeft, ref Rect srcRectRight, ref Rect destRectLeft, ref Rect destRectRight)
+Set stereoscopic rendering side by side or top/bottom. Only supported with external surface rendering mode. You may call this API before or after **SetUpPlayer**. The parameters marked with ref keyword can be retrieved from public properties of OVROverlay. Usage example: `SetStereoscopicRendering(streamIndex, HISPlayerStereoMode.LeftRight, ref overlay.overrideTextureRectMatrix, ref overlay.srcRectLeft, ref overlay.srcRectRight, ref overlay.destRectLeft, ref overlay.destRectLeft);`.

@@ -13,7 +13,7 @@ It’s required to set **UnityAudio** property in MultistreamProperties to True 
 </p>
 
 To get the audio data, you can choose either using **GetAudioData()** or **FillAudioData()** API. 
-Please refer to below APIs section and HISPlayer Android Spatial Audio Sample section.
+Please refer to below APIs section and HISPlayer Meta Quest Spatial Audio Sample section.
 
 ## Related APIs
 
