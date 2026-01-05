@@ -156,7 +156,7 @@ To render 360 degree video, you can set the OVROverlay property **Overlay Shape*
 ### Stereoscopic Video Playback
 If you are using HISPlayerSDK v5.0.0 and above, you may use below API:
 #### void SetStereoscopicRendering(int playerIndex, HISPlayerStereoMode stereoMode, ref bool overrideRect, ref Rect srcRectLeft, ref Rect srcRectRight, ref Rect destRectLeft, ref Rect destRectRight)
-Set stereoscopic rendering side by side or top/bottom. Only supported with external surface rendering mode. You may call this API before or after **SetUpPlayer**. The parameters marked with ref keyword can be retrieved from public properties of OVROverlay. Usage example: 
+Set stereoscopic rendering side by side or top/bottom. Only supported with external surface rendering mode. You may call this API after calling **SetUpPlayer** API. The parameters marked with ref keyword can be retrieved from public properties of OVROverlay. Usage example: 
 ```
 SetStereoscopicRendering(streamIndex, HISPlayerStereoMode.LeftRight, ref overlay.overrideTextureRectMatrix, ref overlay.srcRectLeft, ref overlay.srcRectRight, ref overlay.destRectLeft, ref overlay.destRectLeft);
 ```
