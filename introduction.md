@@ -10,9 +10,9 @@ HISPlayer is the most advanced video streaming player for Unity, supporting loca
   * Local Playback
 
 ### Video Codecs
-  * H.263
   * H.264 (AVC)
   * H.265 (HEVC)
+  * AV1
   * MPEG-4
   * MPEG-2
   * VP9
