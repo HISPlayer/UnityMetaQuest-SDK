@@ -4,6 +4,7 @@
 - [DRM](/drm.md)
 - [Material / RawImage / RenderTexture Rendering](/rendermodes.md)
 - [Playing Local Files](/local-files.md)
+- [Stereoscopic Video](/stereoscopic.md)
 - [Audio Data Retrieval and Unity Audio Connection](/audio-retrieval.md)
 - [Ambisonics Audio](/ambisonic.md)
 - [Controlling ABR](/controlling-abr.md)
