@@ -6,6 +6,7 @@
 - [**Added**] Opus codec support.
 - [**Improvement**] Updated Android Target SDK version to 34.
 - [**Improvement**] Updated mainTemplate.gradle.
+- [**Improvement**] Updated HISPlayerStereoscopicShader for stereo video rendering with RawImage/Material/RenderTexture.
 
 ### Version 5.0.0
 ##### December 19, 2025
