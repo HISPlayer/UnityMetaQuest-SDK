@@ -1,5 +1,13 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.1.0
+##### January 15, 2026
+- [**Added**] MV-HEVC codec support.
+- [**Added**] Opus codec support.
+- [**Improvement**] Updated Android Target SDK version to 34.
+- [**Improvement**] Updated mainTemplate.gradle and Android gradle dependencies.
+- [**Improvement**] Updated HISPlayerStereoscopicShader for stereo video rendering with RawImage/Material/RenderTexture.
+
 ### Version 5.0.0
 ##### December 19, 2025
 - [**Added**] Ambisonic audio supporting ambiX format from first order to 3rd order, and TBE format.
