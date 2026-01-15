@@ -2,9 +2,10 @@
 
 ### Version 5.1.0
 ##### January 15, 2026
-- [**Improvement**] Change Android Target SDK version to 34.
 - [**Added**] MV-HEVC codec support.
 - [**Added**] Opus codec support.
+- [**Improvement**] Updated Android Target SDK version to 34.
+- [**Improvement**] Updated mainTemplate.gradle.
 
 ### Version 5.0.0
 ##### December 19, 2025
