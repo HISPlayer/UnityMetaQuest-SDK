@@ -5,7 +5,7 @@
 - [**Added**] MV-HEVC codec support.
 - [**Added**] Opus codec support.
 - [**Improvement**] Updated Android Target SDK version to 34.
-- [**Improvement**] Updated mainTemplate.gradle.
+- [**Improvement**] Updated mainTemplate.gradle and Android gradle dependencies.
 - [**Improvement**] Updated HISPlayerStereoscopicShader for stereo video rendering with RawImage/Material/RenderTexture.
 
 ### Version 5.0.0
