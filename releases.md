@@ -1,5 +1,9 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.2.0
+##### March 3, 2026
+- [**Improvement**] Improved high resolution selection when using DRM L3 with RawImage/Material/RenderTexture.
+
 ### Version 5.1.0
 ##### January 15, 2026
 - [**Added**] MV-HEVC codec support.
