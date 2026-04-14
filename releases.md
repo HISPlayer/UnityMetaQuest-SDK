@@ -1,5 +1,9 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.3.0
+##### April 14, 2026
+- [**Added**] SeekToFrame API to seek to certain frame of the video.
+
 ### Version 5.2.0
 ##### March 3, 2026
 - [**Improvement**] Improved high resolution selection when using DRM L3 with RawImage/Material/RenderTexture.
