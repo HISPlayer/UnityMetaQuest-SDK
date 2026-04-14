@@ -340,7 +340,10 @@ Pause a certain stream giving a **playerIndex**. The **playerIndex** is associat
 Stop a certain stream giving a **playerIndex**. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
 
 #### void Seek(int playerIndex, long milliseconds)
-Seek a certain stream to a certain time giving a **playerIndex** and the time of the track to be sought in **milliseconds**. The stream is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+Seek a certain stream to a certain time giving a **playerIndex** and the time of the video to be sought in **milliseconds**. The stream is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
+
+#### void SeekToFrame(int playerIndex, long frameNumber)
+Seek a certain stream to a certain frame giving a **playerIndex** and the frame number of the video to be sought. The stream is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
 
 #### void SetVolume(int playerIndex, float volume)
 Modify the volume of a certain stream giving a **playerIndex**. The **volume** of the track value ranges between 0.0f and 1.0f. The **playerIndex** is associated with the index of the element of **Multi Stream Properties**, e.g. the index 0 is the element 0 in the list.
