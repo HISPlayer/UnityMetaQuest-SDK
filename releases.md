@@ -1,5 +1,12 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.4.0
+##### April 28, 2026
+- [macOS Editor][**Improvement**] Updated EventPlaybackReady and SeekToFrame API stability after loading video. 
+- [Windows Editor][**Improvement**] Updated some events are not triggered after changing video content.
+- [Windows Editor][**Improvement**] Updated EventPlaybackSeek to be triggered correctly after seek finishes.
+- [Windows Editor][**Added**] DirectX12 support.
+
 ### Version 5.3.0
 ##### April 14, 2026
 - [**Added**] SeekToFrame API to seek to certain frame of the video.
