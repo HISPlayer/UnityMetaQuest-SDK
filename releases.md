@@ -10,6 +10,7 @@
 ### Version 5.3.0
 ##### April 14, 2026
 - [**Added**] SeekToFrame API to seek to certain frame of the video.
+- [Windows Editor][**Improvement**] Display correct frame after seeking.
 
 ### Version 5.2.0
 ##### March 3, 2026
