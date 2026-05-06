@@ -81,7 +81,7 @@ The remaining AudioSource components follow this same routing logic based on the
 
 ## HISPlayer Meta Quest Spatial Audio Sample
 
-Please download the sample here: [HISPlayer_MetaQuest_SpatialAudio_Sample.unitypackage](https://downloads.hisplayer.com/Unity/AllPlatforms/HISPlayer_MetaQuest_OVROverlay_SpatialAudio_Sample.unitypackage) and import it to your Unity project.
+Please download the sample here: [HISPlayer_MetaQuest_SpatialAudio_Sample.unitypackage](https://downloads.hisplayer.com/Unity/AllPlatforms/HISPlayer_MetaQuest_OVROverlay_SpatialAudio_SampleV2.unitypackage) and import it to your Unity project.
 
 Before using the sample, make sure that you have imported HISPlayer SDK. If not, please follow the [**Quickstart Guide**](./setup-guide.md).
 
