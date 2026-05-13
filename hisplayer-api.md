@@ -508,3 +508,9 @@ Set stereoscopic rendering side by side or top/bottom. Only supported with exter
 ```
 SetStereoscopicRendering(streamIndex, HISPlayerStereoMode.LeftRight, ref overlay.overrideTextureRectMatrix, ref overlay.srcRectLeft, ref overlay.srcRectRight, ref overlay.destRectLeft, ref overlay.destRectRight);
 ```
+
+#### void EnableSurfaceCopy(int playerIndex, RenderTexture targetTexture)
+Enable copy video output frame to RenderTexture.
+OVR compositor surface is copied to **targetTexture**. 
+The targetTexture can be applied to any Unity mesh (e.g., a Cube, Quad).
+Please call this API after **SetUpPlayer**.
