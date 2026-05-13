@@ -1,16 +1,23 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.5.0
+##### May 13, 2026
+- [**Added**] EnableSurfaceCopy API to copy video output to another RenderTexture.
+- [**Improvement**] Updated SeekToFrame API for HLS and multiple tracks stream for Quest and Editors.
+- [**Improvement**] Removed Unity GameObject Destroy error log in Unity Edit mode.
+- [**Improvement**] Optimized texture rendering for Scene tab in Unity Edit mode for Windows Editor.
+
 ### Version 5.4.0
 ##### April 28, 2026
-- [macOS Editor][**Improvement**] Updated EventPlaybackReady and SeekToFrame API stability after loading video. 
-- [Windows Editor][**Improvement**] Updated some events are not triggered after changing video content.
-- [Windows Editor][**Improvement**] Updated EventPlaybackSeek to be triggered correctly after seek finishes.
-- [Windows Editor][**Added**] DirectX12 support.
+- [**Improvement**] Updated EventPlaybackReady and SeekToFrame API stability after loading video for macOS Editor. 
+- [**Improvement**] Updated some events are not triggered after changing video content for Windows Editor.
+- [**Improvement**] Updated EventPlaybackSeek to be triggered correctly after seek finishes for Windows Editor.
+- [**Added**] DirectX12 support for Windows Editor.
 
 ### Version 5.3.0
 ##### April 14, 2026
 - [**Added**] SeekToFrame API to seek to certain frame of the video.
-- [Windows Editor][**Improvement**] Display correct frame after seeking.
+- [**Improvement**] Display correct frame after seeking for Windows Editor.
 
 ### Version 5.2.0
 ##### March 3, 2026
