@@ -3,7 +3,7 @@
 ### Version 5.5.0
 ##### May 13, 2026
 - [**Added**] EnableSurfaceCopy API to copy video output to another RenderTexture.
-- [**Improvement**] Updated SeekToFrame API for HLS and multiple tracks stream for Quest and Editors.
+- [**Improvement**] Updated SeekToFrame API to work with HLS and multiple tracks stream for Quest and Editors.
 - [**Improvement**] Removed Unity GameObject Destroy error log in Unity Edit mode.
 - [**Improvement**] Optimized texture rendering for Scene tab in Unity Edit mode for Windows Editor.
 
