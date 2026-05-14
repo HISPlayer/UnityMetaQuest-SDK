@@ -31,7 +31,7 @@ Retrieves the PCM audio data for each channel as an array of floats. The channel
 
 Please use this API when **UnityAudio** is set to true.
 
-#### void FillAudioData(int playerIndex, float[] audioData, int inputChannelIndex, List<int> speakerChannelIndexes)
+#### void FillAudioData(int playerIndex, float[] audioData, int inputChannelIndex, List&lt;int&gt; speakerChannelIndexes)
 Fills the provided audio buffer with new PCM audio data.
 
 **Parameters:**
