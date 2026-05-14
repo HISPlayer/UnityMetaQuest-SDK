@@ -21,8 +21,9 @@ HISPlayer is the most advanced video streaming player for Unity, supporting loca
 ### Audio Codecs
   * AAC-LC
   * MP3
-  * Dolby AC3 (if codec is available in the device Hardware)
-  * Dolby EAC3 (if codec is available in the device Hardware)
+  * Dolby AC-3
+  * Dolby AC-4
+  * Dolby EAC-3
   * Opus
 
 ### Subtitles
