@@ -1,5 +1,11 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.6.0
+##### May 14, 2026
+- [**Added**] Dolby AC-4, AC-3 SW decoder.
+- [**Added**] Support combination of PCM data extraction and Ambisonic with all audio decoders.
+- [**Improvement**] Updated FillAudioData API to support more than 5 channels with additional parameter List&lt;int&gt; speakerChannelIndexes.
+
 ### Version 5.5.0
 ##### May 13, 2026
 - [**Added**] EnableSurfaceCopy API to copy video output to another RenderTexture.
