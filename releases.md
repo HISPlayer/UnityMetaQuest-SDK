@@ -1,5 +1,9 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.6.1
+##### May 19, 2026
+- [**Improvement**] Updated multi platforms package structure.
+
 ### Version 5.6.0
 ##### May 14, 2026
 - [**Added**] Support combination of PCM data extraction and Ambisonic with all audio decoders.
