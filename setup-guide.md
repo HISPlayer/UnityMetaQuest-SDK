@@ -10,8 +10,10 @@ Getting started with HISPlayer consists of implementing the following steps:
       1.3. Configure Unity for Android
    
 2. HISPlayer Meta Quest SDK Sample
-   
-    2.1 Import HISPlayer Meta Quest SDK Sample
+
+      2.1 Import HISPlayer Meta Quest SDK Sample
+
+      2.2 Sample Explanation
 
 ## 1.1 Integrate Meta XR All-in-One SDK
 
@@ -73,7 +75,7 @@ Alternatively, you may set the Target API level to 34 or higher in the Unity pro
  
 ## 2.1 Import HISPlayer Meta Quest SDK Sample
 
-Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaQuestSDK_Sample.unitypackage) (no need to download it if you have received it in the email). 
+Please, download the sample here[DELETE THIS COMMENT, upload the sample after the review): [**HISPlayer Meta Quest SDK Sample**]() (no need to download it if you have received it in the email). 
 
 Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps:
   - Set up the Meta XR All-in-One environment
@@ -85,14 +87,14 @@ Before using the sample, please make sure you have followed the above steps to s
 
 To check how to set up the SDK and API usage, please refer to the sample scenes described below.
 
-## Sample Explanation
+## 2.2 Sample Explanation
 
 ### Shared Elements
 
 All sample scenes share a common foundation that you need to understand before looking at the specific configurations:
 
 - A **HISPlayerSample** script (or a variant) that inherits from `HISPlayerManager` and requires the `using HISPlayerAPI;` dependency.
-- An **OVROverlay** component attached to the video display GameObject (except for audio-only scenes). Its key properties are:
+- An **OVROverlay** component attached to the `RenderScreen` GameObject. Its key properties are:
   - **Overlay Shape**: `Quad` for flat video, `Equirect` for 360°.
   - **Is External Surface**: `True`
   - **External Surface Width / Height**: set to the maximum resolution of your streams.
@@ -112,17 +114,14 @@ using HISPlayerAPI;
 
 public class HISPlayerSample : HISPlayerManager
 {
-    // ...
-    void SetUpMetaQuest()
-    {
-        // Find OVROverlay and set external surface, then call SetUpPlayer()
-    }
+    ...
 }
 ```
 
 With this shared baseline, each scene adds small variations that are explained in the following sections.
 
-### 360 Scene
+### Available Scenes
+#### 360 Scene
 This scene renders a 360° video.
 
 Instead of a Quad, the Mesh Filter uses a **Sphere**, and the assigned material is **360_Mat**, which relies on the **HISPlayer360Shader**.
@@ -143,7 +142,7 @@ The `OVROverlay` **Overlay Shape** is set to `Equirect`.
   />
 </p>
 
-### Ambisonic Scene
+#### Ambisonic Scene
 This scene plays **audio-only** content; there is no video rendering surface. The default stream used is:  
 `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_16Ch.mkv`  
 with **Ambisonic Audio** configured as **AMBIX_16 Channels**.  
@@ -154,35 +153,64 @@ You can also test with these alternative streams:
 
 For more information, please refer to the following [Ambisonic documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/ambisonic).
 
-### HEVC_DRM Scene
+#### HEVC_DRM Scene
 This scene is designed for **DRM-protected HEVC** content.
 
 For more information, please refer to the following [DRM documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/drm).
 
-### MultiStream Scene
+#### MultiStream Scene
 Here the sample uses the **HISPlayerVRMultiController** script, a variant of `HISPlayerVRController` that is adapted to handle **two video streams** simultaneously. You can activate the **Synchronize Streams** option to keep both streams in sync.
 
 For more details, please refer to the following [Synchronize MultiStreams API documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/hisplayer-api?id=void-synchronizemultistreamsint-primaryplayerindex-int-secondaryplayerindex-long-offsetms-0).
 
-### MV-HEVC Scene
+#### MV-HEVC Scene
 This scene is configured to play **MV-HEVC** (Multiview High Efficiency Video Coding) content, enabling native 3D or multiview video playback.
 
-### Spatial Audio Scene
+For more information, please refer to the following [MV-HEVC documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/stereoscopic?id=hisplayer-meta-quest-mv-hevc-sample).
+
+#### Spatial Audio Scene
 Two helper GameObjects are present in the scene: **FillAudioSourceGroup** and **GetAudioSourceGroup**. Activating or deactivating them switches between the corresponding audio retrieval APIs.
 
 For more information, please refer to the following [Audio Retrieval guide](https://hisplayer.github.io/UnityMetaQuest-SDK/#/audio-retrieval).
 
-### Stereoscopic Scene
+#### Stereoscopic Scene
 This scene is set up for **stereoscopic video** playback, rendering separate left/right eye views.
 
 For more information, please refer to the following [Stereoscopic guide](https://hisplayer.github.io/UnityMetaQuest-SDK/#/stereoscopic).
 
-### Scene Navigation Controls
+### Controls
+#### Scene Navigation Controls
 Use the **right controller** to navigate between the sample scenes:
 - Press **A** to move to the **next scene**.
 - Press **B** to go back to the **previous scene**.
 
 The order of the scenes is defined by the **Scene List** in the **Build Profile** (File > Build Settings).
+
+#### Playback Controls
+Each scene provides a unified control bar with the following interactive elements:
+
+<p align="center">
+  <img 
+    alt="image" 
+    src="https://github.com/user-attachments/assets/f36fb43b-c2b7-4161-81bd-9eac33ea735d"
+    style="max-width: 100%; height: auto;"
+  />
+</p>
+
+- **Video timeline**: a draggable seek bar that displays the current playback progress.
+- **Stop** button
+- **Mute** button
+- **Volume control** slider
+- **Previous Video** button
+- **Backward** button
+- **Play/Pause** button
+- **Forward** button
+- **Next Video** button
+- **Speed Rate** button: cycles through the available playback speeds.
+- **Subtitles** button: toggles subtitles when they are available.
+- **Settings** button: opens a settings panel.
+
+Inside the **Settings** panel, and depending on the video’s capabilities, you can change the **Quality**, **Language**, and **Captions**.
 
 ## More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
