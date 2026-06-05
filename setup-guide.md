@@ -75,44 +75,34 @@ Alternatively, you may set the Target API level to 34 or higher in the Unity pro
 
 Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaQuestSDK_Sample.unitypackage) (no need to download it if you have received it in the email). 
 
-Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps :
+Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps:
   - Set up the Meta XR All-in-One environment
   - Import HISPlayer SDK
   - Import HISPlayer Meta Quest SDK Sample
-  - Open Assets/HISPlayerMetaQuestSample/Scenes/HISPlayerMetaQuestSDKSample.unity
-  - Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources
-  - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**
-  - Open File > Build Settings > Add Open Scenes
+  - Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources.
+  - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**. This must be done for **each scene** while adding them to the Scene List. Open each scene located in `Assets/HISPlayerMetaQuestSample/Scenes/`, set the license key if needed, then go to **File > Build Settings > Add Open Scenes** to include it in the **Scene List** of the Build Profile.
   - Build and Run
 
-To check how to set up the SDK and API usage, please refer to Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/**HISPlayerSample.cs** and **StreamController** GameObject in the Editor.
+To check how to set up the SDK and API usage, please refer to the sample scenes described below.
 
 ## Sample Explanation
 
-### Editor
+### Shared Elements
 
-Attach OVROverlay script to **RenderScreen** Quad GameObject. The video will be rendered on the Quad GameObject.
+All sample scenes share a common foundation that you need to understand before looking at the specific configurations:
 
-<p align="center">
-  <img width="70%" alt="image" src="https://github.com/user-attachments/assets/54f131a8-1331-49ed-bf17-df40311e2526">
-</p>
+- A **HISPlayerSample** script (or a variant) that inherits from `HISPlayerManager` and requires the `using HISPlayerAPI;` dependency.
+- An **OVROverlay** component attached to the video display GameObject (except for audio-only scenes). Its key properties are:
+  - **Overlay Shape**: `Quad` for flat video, `Equirect` for 360°.
+  - **Is External Surface**: `True`
+  - **External Surface Width / Height**: set to the maximum resolution of your streams.
+  - **Is Protected Content**: `True` when playing DRM-protected content.
+- The `SetUpMetaQuest()` method finds the `OVROverlay` component, assigns it to `MultiStreamProperties.externalSurface`, and calls `SetUpPlayer()` to initialize the player.
+- **MultiStreamProperties** must have **RenderMode** set to **External Surface** on the **StreamController** GameObject.
 
-Set the following OVROverlay properties:
-- **Overlay Shape**: Quad or Equirect (for 360 degree video)
-- **Is External Surface**: True
-- **External Surface Width**: Input the desired width size. You may input the same value as the highest resolution (width) of your stream.
-- **External Surface Height**: Input the desired height size. You may input the same value as the highest resolution (height) of your stream.
-- **Is Protected Content**: True.  
+The typical video rendering GameObject is a Quad named **RenderScreen**. The 360 scene uses a Sphere (see details below). Every scene follows the same initialization flow.
 
-In the HISPlayer multistream properties, set the **RenderMode** as **External Surface**. Please go to **StreamController** GameObject > **HISPlayerSample** script > **MultiStreamProperties** > **RenderMode** > **External Surface**.
-
-<p align="center">
-  <img width="90%" alt="image" src="https://github.com/user-attachments/assets/3aff176b-16e5-46b0-b42a-0ace964c1dcc">
-</p>
-
-### Script
-
-Please check Assets/HISPlayerMetaQuestSDKSample/Scripts/Sample/**HISPlayerSample.cs** script. The script must inherit from **HISPlayerManager**. It is necessary to add the **'using HISPlayerAPI;'** dependency
+Example script structure:
 
 ```C#
 using System.Collections;
@@ -122,35 +112,77 @@ using HISPlayerAPI;
 
 public class HISPlayerSample : HISPlayerManager
 {
-    ...
+    // ...
+    void SetUpMetaQuest()
+    {
+        // Find OVROverlay and set external surface, then call SetUpPlayer()
+    }
 }
 ```
 
-Next, please refer to the **SetUpMetaQuest()** function:
-- Find OVROverlay component from the GameObject (**RenderScreen**) that we have created.
-- When the external surface object has been created:
-  - Set the external surface to HISPlayer multistream properties's **externalSurface** object.
-  - Call **SetUpPlayer()** to initialize the player and load the stream.
- 
-It is necessary to call SetUpPlayer() before calling other APIs. This function initializes everything else that will be needed during the usage of HISPlayer APIs.  
+With this shared baseline, each scene adds small variations that are explained in the following sections.
 
-### Non-DRM Video Playback
-If you are not playing a DRM protected content, please modify the **MultiStreamProperties** by unchecking the **Enable DRM** checkbox to disable DRM and remove all element from **Key Server URI** list.
+### 360 Scene
+This scene renders a 360° video.
 
+Instead of a Quad, the Mesh Filter uses a **Sphere**, and the assigned material is **360_Mat**, which relies on the **HISPlayer360Shader**.
 <p align="center">
-  <img width="50%" alt="image" src="https://github.com/user-attachments/assets/5da42bb6-30bc-47c1-b4ee-70b81775286e">
+  <img 
+    alt="image" 
+    src="https://github.com/user-attachments/assets/ca9214e3-242e-499e-b454-93bb6944337a"
+    style="max-width: 100%; height: auto;"
+  />
 </p>
 
-### 360 Degree Video Playback
-To render 360 degree video, you can set the OVROverlay property **Overlay Shape** to **Equirect**.
-
+The `OVROverlay` **Overlay Shape** is set to `Equirect`.
 <p align="center">
-  <img width="80%" alt="image" src="https://github.com/user-attachments/assets/cefa37ec-0cd1-457b-b283-5d7e7e27a697">
+  <img 
+    alt="image" 
+    src="https://github.com/user-attachments/assets/467d5a7e-1932-4bae-8951-d54561bc9b35"
+    style="max-width: 100%; height: auto;"
+  />
 </p>
 
+### Ambisonic Scene
+This scene plays **audio-only** content; there is no video rendering surface. The default stream used is:  
+`https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_16Ch.mkv`  
+with **Ambisonic Audio** configured as **AMBIX_16 Channels**.  
 
-### Stereoscopic Video Playback
-Refer to [**Stereoscopic Video**](./stereoscopic.md).
+You can also test with these alternative streams:  
+- `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_9Ch.mkv` with **Ambisonic Audio** configured as **AMBIX_9 Channels**.  
+- `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_TBE_8_2.mkv` with **Ambisonic Audio** configured as **TBE_8 Channels_2 Head Locked Channels**.
+
+For more information, please refer to the following [Ambisonic documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/ambisonic).
+
+### HEVC_DRM Scene
+This scene is designed for **DRM-protected HEVC** content.
+
+For more information, please refer to the following [DRM documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/drm).
+
+### MultiStream Scene
+Here the sample uses the **HISPlayerVRMultiController** script, a variant of `HISPlayerVRController` that is adapted to handle **two video streams** simultaneously. You can activate the **Synchronize Streams** option to keep both streams in sync.
+
+For more details, please refer to the following [Synchronize MultiStreams API documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/hisplayer-api?id=void-synchronizemultistreamsint-primaryplayerindex-int-secondaryplayerindex-long-offsetms-0).
+
+### MV-HEVC Scene
+This scene is configured to play **MV-HEVC** (Multiview High Efficiency Video Coding) content, enabling native 3D or multiview video playback.
+
+### Spatial Audio Scene
+Two helper GameObjects are present in the scene: **FillAudioSourceGroup** and **GetAudioSourceGroup**. Activating or deactivating them switches between the corresponding audio retrieval APIs.
+
+For more information, please refer to the following [Audio Retrieval guide](https://hisplayer.github.io/UnityMetaQuest-SDK/#/audio-retrieval).
+
+### Stereoscopic Scene
+This scene is set up for **stereoscopic video** playback, rendering separate left/right eye views.
+
+For more information, please refer to the following [Stereoscopic guide](https://hisplayer.github.io/UnityMetaQuest-SDK/#/stereoscopic).
+
+### Scene Navigation Controls
+Use the **right controller** to navigate between the sample scenes:
+- Press **A** to move to the **next scene**.
+- Press **B** to go back to the **previous scene**.
+
+The order of the scenes is defined by the **Scene List** in the **Build Profile** (File > Build Settings).
 
 ## More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
