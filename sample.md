@@ -78,32 +78,32 @@ You can also test with these alternative streams:
 - `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_9Ch.mkv` with **Ambisonic Audio** configured as **AMBIX_9 Channels**.  
 - `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_TBE_8_2.mkv` with **Ambisonic Audio** configured as **TBE_8 Channels_2 Head Locked Channels**.
 
-For more information, please refer to the following [Ambisonic documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/ambisonic).
+For more information, please refer to the following [Ambisonic documentation](/ambisonic.md).
 
 #### HEVC_DRM Scene
 This scene is designed for **DRM-protected HEVC** content.
 
-For more information, please refer to the following [DRM documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/drm).
+For more information, please refer to the following [DRM documentation](drm.md).
 
 #### MultiStream Scene
 Here the sample uses the **HISPlayerVRMultiController** script, a variant of `HISPlayerVRController` that is adapted to handle **two video streams** simultaneously. You can activate the **Synchronize Streams** option to keep both streams in sync.
 
-For more details, please refer to the following [Synchronize MultiStreams API documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/hisplayer-api?id=void-synchronizemultistreamsint-primaryplayerindex-int-secondaryplayerindex-long-offsetms-0).
+For more details, please refer to the following [Synchronize MultiStreams API documentation](/hisplayer-api.md?id=void-synchronizemultistreamsint-primaryplayerindex-int-secondaryplayerindex-long-offsetms-0).
 
 #### MV-HEVC Scene
 This scene is configured to play **MV-HEVC** (Multiview High Efficiency Video Coding) content, enabling native 3D or multiview video playback.
 
-For more information, please refer to the following [MV-HEVC documentation](https://hisplayer.github.io/UnityMetaQuest-SDK/#/stereoscopic?id=hisplayer-meta-quest-mv-hevc-sample).
+For more information, please refer to the following [MV-HEVC documentation](/stereoscopic.md?id=hisplayer-meta-quest-mv-hevc-sample).
 
 #### Spatial Audio Scene
 Two helper GameObjects are present in the scene: **FillAudioSourceGroup** and **GetAudioSourceGroup**. Activating or deactivating them switches between the corresponding audio retrieval APIs.
 
-For more information, please refer to the following [Audio Retrieval guide](https://hisplayer.github.io/UnityMetaQuest-SDK/#/audio-retrieval).
+For more information, please refer to the following [Audio Retrieval guide](/audio-retrieval.md).
 
 #### Stereoscopic Scene
 This scene is set up for **stereoscopic video** playback, rendering separate left/right eye views.
 
-For more information, please refer to the following [Stereoscopic guide](https://hisplayer.github.io/UnityMetaQuest-SDK/#/stereoscopic).
+For more information, please refer to the following [Stereoscopic guide](/stereoscopic.md).
 
 ### 2.3. Controls
 #### Scene Navigation Controls
