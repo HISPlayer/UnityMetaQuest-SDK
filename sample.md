@@ -5,7 +5,7 @@ Please, download the sample here[DELETE THIS COMMENT, upload the sample after th
 ## 1. Set Up HISPlayer Meta Quest SDK Sample
 
 Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps:
-  - Set up the [Meta XR All-in-One environment](/setup-guide?id=_11-integrate-meta-xr-all-in-one-sdk).
+  - Set up the [Meta XR All-in-One environment](/#/setup-guide?id=_11-integrate-meta-xr-all-in-one-sdk).
   - Import HISPlayer SDK
   - Import HISPlayer Meta Quest SDK Sample
   - Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources.
