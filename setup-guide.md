@@ -20,7 +20,7 @@ Integrate HISPlayer SDK with the **[Meta XR All-in-One SDK](https://developer.oc
 First, please configure the Unity project for Oculus by following this [Tutorial](https://developer.oculus.com/documentation/unity/unity-tutorial-hello-vr/) and open **Window > Package Manager > Packages: In Project** to check Meta XR All-in-One SDK is installed properly.
 
 <p align="center">
-<img width="605" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/b4e362ba-f3d1-4d07-a46b-7a76e73d30fb">
+      <img width="605" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/b4e362ba-f3d1-4d07-a46b-7a76e73d30fb">
 </p>
 
 #### Meta XR Setup Tool
@@ -28,7 +28,7 @@ First, please configure the Unity project for Oculus by following this [Tutorial
 Open **Edit > Player Settings > MetaXR**, select the Android platform and clik "**Select All**" and "**Apply All**" in order to set up all the Meta XR settings. 
 
 <p align="center">
-<img width="90%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/691d9de5-3874-4b6a-bb1e-3b2981020590">
+      <img width="90%" alt="image" src="https://github.com/HISPlayer/UnityAndroid-SDK/assets/47497948/691d9de5-3874-4b6a-bb1e-3b2981020590">
 </p>
 
 In XR Plug-in Management, please make sure that you have the **OpenXR** option checked (or Oculus for older Meta XR SDK version). Otherwise, when you run the application, it will show a 2D window without XR environment.
@@ -36,7 +36,7 @@ In XR Plug-in Management, please make sure that you have the **OpenXR** option c
   - **Edit > Project Settings > XR Plug-in Management**
 
 <p align="center">
-<img width="60%" alt="image" src="https://github.com/user-attachments/assets/3d1372e8-ee40-41fd-8ddd-d8d360a47534">
+      <img width="60%" alt="image" src="https://github.com/user-attachments/assets/3d1372e8-ee40-41fd-8ddd-d8d360a47534">
 </p>
 
 ## 1.2 Import HISPlayer SDK
@@ -49,7 +49,7 @@ Select the package of _HISPlayer SDK_ and import it.
 Select the package of _HISPlayer SDK_ and import it.
 
 <p align="center">
-<img width=90% src="https://github.com/user-attachments/assets/c6c6d488-2b2c-4b79-b775-dd9dffc14471">
+      <img width=90% src="https://github.com/user-attachments/assets/c6c6d488-2b2c-4b79-b775-dd9dffc14471">
 </p>
 
 ## 1.3 Configure Unity for Android
@@ -57,7 +57,7 @@ Select the package of _HISPlayer SDK_ and import it.
 Open the window **Tools > HISPlayer** located in the upper side of the screen > Click on Player Settings Configuration > Select **Build Target to Android** > Set all the required settings.
 
 <p align="center">
-<img width="450" src="assets/image-player-setting-configuration.png">
+      <img width="450" src="assets/image-player-setting-configuration.png">
 </p>
 
 Setting **"Plugins folder"** will create **mainTemplate.gradle** and **gradleTemplate.properties** in your ProjectRoot\Assets\Plugins\Android. Please make sure you use the correct **mainTemplate.gradle** that is generated from our SDK. If you need to modify it, please make sure the dependencies and configurations from HISPlayer SDK's mainTemplate.gradle exist in your modified gradle file.
@@ -66,7 +66,7 @@ Setting **"Plugins folder"** will create **mainTemplate.gradle** and **gradleTem
 It is recommended to set Target API Level to 34 or higher. By selecting Android target 34, Unity is going to ask you to update (in the case you don't have the SDK installed). Please, press "Update Android SDK" button.
 
 <p align="center">
-<img width="250" alt="image" src="assets/image-android-sdk-update.png">
+      <img width="250" alt="image" src="assets/image-android-sdk-update.png">
 </p>
 
 Alternatively, you may set the Target API level to 34 or higher in the Unity project settings.
