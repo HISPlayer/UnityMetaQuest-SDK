@@ -9,11 +9,9 @@ Getting started with HISPlayer consists of implementing the following steps:
  
       1.3. Configure Unity for Android
    
-2. HISPlayer Meta Quest SDK Sample
+2. Official Sample
 
-      2.1 Import HISPlayer Meta Quest SDK Sample
-
-      2.2 Sample Explanation
+3. More Information, Features and APIs
 
 ## 1.1 Integrate Meta XR All-in-One SDK
 
@@ -73,8 +71,8 @@ It is recommended to set Target API Level to 34 or higher. By selecting Android 
 
 Alternatively, you may set the Target API level to 34 or higher in the Unity project settings.
 
-## Official Sample
+## 2. Official Sample
 To try the official sample, please refer to the following [**Official Sample**](/sample.md).
 
-## More Information, Features and APIs
+## 3. More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
