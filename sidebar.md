@@ -1,6 +1,6 @@
 - [HISPlayer Unity Meta Quest SDK](/introduction.md)
 - [Quickstart Guide](/setup-guide.md)
-- [Sample Explanation](/sample.md)
+- [Official Sample](/sample.md)
 - [HISPlayer API](/hisplayer-api.md)
 - [DRM](/drm.md)
 - [Material / RawImage / RenderTexture Rendering](/rendermodes.md)
