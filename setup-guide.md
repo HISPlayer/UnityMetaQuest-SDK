@@ -126,9 +126,9 @@ public class HISPlayerSample : HISPlayerManager
 }
 ```
 
-Next, please refer to the **SetUpExternalSurface()** function:
-- Find the **CompositionLayer** component from the GameObject (**RenderScreen**) that we have created.
-- When the external surface object has been created (retrieved via `OpenXRLayerUtility.GetLayerAndroidSurfaceObject()`):
+Next, please refer to the **SetUpMetaQuest()** function:
+- Find OVROverlay component from the GameObject (**RenderScreen**) that we have created.
+- When the external surface object has been created:
   - Set the external surface to HISPlayer multistream properties's **externalSurface** object.
   - Call **SetUpPlayer()** to initialize the player and load the stream.
 
