@@ -126,13 +126,13 @@ public class HISPlayerSample : HISPlayerManager
 }
 ```
 
-Next, please refer to the **SetUpMetaQuest()** function:
-- Find OVROverlay component from the GameObject (**RenderScreen**) that we have created.
-- When the external surface object has been created:
+Next, please refer to the **SetUpExternalSurface()** function:
+- Find the **CompositionLayer** component from the GameObject (**RenderScreen**) that we have created.
+- When the external surface object has been created (retrieved via `OpenXRLayerUtility.GetLayerAndroidSurfaceObject()`):
   - Set the external surface to HISPlayer multistream properties's **externalSurface** object.
   - Call **SetUpPlayer()** to initialize the player and load the stream.
- 
-It is necessary to call SetUpPlayer() before calling other APIs. This function initializes everything else that will be needed during the usage of HISPlayer APIs.  
+
+It is necessary to call SetUpPlayer() before calling other APIs. This function initializes everything else that will be needed during the usage of HISPlayer APIs.
 
 ### Non-DRM Video Playback
 If you are not playing a DRM protected content, please modify the **MultiStreamProperties** by unchecking the **Enable DRM** checkbox to disable DRM and remove all element from **Key Server URI** list.
