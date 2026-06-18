@@ -52,21 +52,15 @@ With this shared baseline, each scene adds small variations that are explained i
 This scene renders a 360° video.
 
 Instead of a Quad, the Mesh Filter uses a **Sphere**, and the assigned material is **360_Mat**, which relies on the **HISPlayer360Shader**.
+
 <p align="center">
-  <img 
-    alt="image" 
-    src="https://github.com/user-attachments/assets/ca9214e3-242e-499e-b454-93bb6944337a"
-    style="max-width: 100%; height: auto;"
-  />
+  <img src="https://github.com/user-attachments/assets/ca9214e3-242e-499e-b454-93bb6944337a" alt="texto" width="50%" style="height: auto;" />
 </p>
 
 The `OVROverlay` **Overlay Shape** is set to `Equirect`.
+
 <p align="center">
-  <img 
-    alt="image" 
-    src="https://github.com/user-attachments/assets/467d5a7e-1932-4bae-8951-d54561bc9b35"
-    style="max-width: 100%; height: auto;"
-  />
+  <img src="https://github.com/user-attachments/assets/467d5a7e-1932-4bae-8951-d54561bc9b35" alt="texto" width="50%" style="height: auto;" />
 </p>
 
 #### 360 Stereoscopic Scene
@@ -117,11 +111,7 @@ The order of the scenes is defined by the **Scene List** in the **Build Profile*
 Each scene provides a unified control bar with the following interactive elements:
 
 <p align="center">
-  <img 
-    alt="image" 
-    src="https://github.com/user-attachments/assets/f36fb43b-c2b7-4161-81bd-9eac33ea735d"
-    style="max-width: 100%; height: auto;"
-  />
+  <img src="https://github.com/user-attachments/assets/f36fb43b-c2b7-4161-81bd-9eac33ea735d" alt="texto" width="50%" style="height: auto;" />
 </p>
 
 - **Video timeline**: a draggable seek bar that displays the current playback progress.
