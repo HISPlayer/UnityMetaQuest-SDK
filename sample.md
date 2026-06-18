@@ -1,6 +1,6 @@
 # Official Sample
 
-Please, download the sample here[DELETE THIS COMMENT, upload the sample after the review): [**HISPlayer Meta Quest SDK Sample**]() (no need to download it if you have received it in the email). 
+Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaXR_OfficialSample_1.0.0.unitypackage) (no need to download it if you have received it in the email). 
 
 ## 1. Set Up HISPlayer Meta Quest SDK Sample
 
@@ -69,6 +69,11 @@ The `OVROverlay` **Overlay Shape** is set to `Equirect`.
   />
 </p>
 
+#### 360 Stereoscopic Scene
+This scene uses the same settings as the 360 ​​scene, but adds **stereoscopic video** playback, rendering separate left/right eye views.
+
+For more information, please refer to the following [Stereoscopic guide](/stereoscopic.md).
+
 #### Ambisonic Scene
 This scene plays **audio-only** content; there is no video rendering surface. The default stream used is:  
 `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_16Ch.mkv`  
@@ -99,11 +104,6 @@ For more information, please refer to the following [MV-HEVC documentation](/ste
 Two helper GameObjects are present in the scene: **FillAudioSourceGroup** and **GetAudioSourceGroup**. Activating or deactivating them switches between the corresponding audio retrieval APIs.
 
 For more information, please refer to the following [Audio Retrieval guide](/audio-retrieval.md).
-
-#### Stereoscopic Scene
-This scene is set up for **stereoscopic video** playback, rendering separate left/right eye views.
-
-For more information, please refer to the following [Stereoscopic guide](/stereoscopic.md).
 
 ### 2.3. Controls
 #### Scene Navigation Controls
