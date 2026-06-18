@@ -1,5 +1,9 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.6.2
+##### May 26, 2026
+- [**Improvement**] Optimized video frame and GetVideoPosition (timestamp) synchronization.
+
 ### Version 5.6.1
 ##### May 19, 2026
 - [**Improvement**] Updated multi platforms package structure.

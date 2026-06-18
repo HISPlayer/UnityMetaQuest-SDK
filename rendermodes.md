@@ -29,8 +29,7 @@ In the HISPlayer multistream properties, set the **RenderMode** as **RawImage**.
 </p>
 
 ### Linear Color Space Usage
-If you use Linear Color Space in the Unity project settings, please attach **HISPlayerDefaultMaterialRawImage.mat** in **Packages/HISPlayerSDK/HisPlayer/Resources/Materials/** to the material attribute of the RawImage component.
-It uses the **HISPlayerDefaultShaderRawImage.shader** that will fix color issue with Linear Color Space.
+No additional shader changes are required for Raw Image mode.
 
 ## <ins>RenderTexture</ins>
 For this you can use the RenderTexture we provide or create a RenderTexture from zero. In the first case, go to the Resources folder of our package and attach the **Resources > Materials > HISPlayerDefaultMaterialRenderTexture.mat** to the GameObject that is going to be used as screen and the **Resources > RenderTextures > HISPlayerRenderTexture.renderTexture** to the stream controller component.
