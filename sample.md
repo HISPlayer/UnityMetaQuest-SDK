@@ -1,6 +1,6 @@
 # Official Sample
 
-Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaXR_OfficialSample_1.0.0.unitypackage) (no need to download it if you have received it in the email). 
+Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaXR_Sample_1.1.0.unitypackage) (no need to download it if you have received it in the email). 
 
 ## 1. Set Up HISPlayer Meta Quest SDK Sample
 
