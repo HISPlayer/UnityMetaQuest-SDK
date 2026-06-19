@@ -73,7 +73,7 @@ Alternatively, you may set the Target API level to 34 or higher in the Unity pro
 
 ## 2. Official Sample
 
-Please, download the sample here[DELETE THIS COMMENT, upload the sample after the review): [**HISPlayer Meta Quest SDK Sample**]() (no need to download it if you have received it in the email). 
+Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaXR_Sample_1.1.0.unitypackage) (no need to download it if you have received it in the email). 
 
 Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps:
   - Set up the [Meta XR All-in-One environment](/setup-guide.md?id=_11-integrate-meta-xr-all-in-one-sdk).
