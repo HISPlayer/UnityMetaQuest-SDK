@@ -9,7 +9,7 @@ Getting started with HISPlayer consists of implementing the following steps:
  
       1.3. Configure Unity for Android
    
-2. Official Sample
+2. Meta XR Sample
 
 3. More Information, Features and APIs
 
@@ -71,7 +71,7 @@ It is recommended to set Target API Level to 34 or higher. By selecting Android 
 
 Alternatively, you may set the Target API level to 34 or higher in the Unity project settings.
 
-## 2. Official Sample
+## 2. Meta XR Sample
 
 Please, download the sample here: [**HISPlayer Meta Quest SDK Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaXR_Sample_1.1.0.unitypackage) (no need to download it if you have received it in the email). 
 
@@ -83,7 +83,7 @@ Before using the sample, please make sure you have followed the above steps to s
   - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**. This must be done for **each scene** you want to test while adding them to the Scene List. Open each scene located in `Assets/HISPlayerMetaQuestSample/Scenes/`, set the license key if needed, then go to **File > Build Settings > Add Open Scenes** to include it in the **Scene List** of the Build Profile.
   - Build and Run
 
-For more information about the official sample, please refer to the following [**Official Sample**](/sample.md).
+For more information about the Meta XR sample, please refer to the following [**Meta XR Sample**](/sample.md).
 
 ## 3. More Information, Features and APIs
 For more information about the supported features and APIs, please refer to the following [**HISPlayer API**](/hisplayer-api.md).
