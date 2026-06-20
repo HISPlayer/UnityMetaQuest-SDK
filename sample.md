@@ -90,7 +90,7 @@ For more details, please refer to the following [Synchronize MultiStreams API do
 #### MV-HEVC Scene
 This scene is configured to play **MV-HEVC** (Multiview High Efficiency Video Coding) content, enabling native 3D or multiview video playback.
 
-For more information, please refer to the following [MV-HEVC documentation](/stereoscopic.md?id=hisplayer-meta-quest-mv-hevc-sample).
+For more information how to render MV-HEVC video, please refer to the following [Stereoscopic guide](/stereoscopic.md).
 
 #### Spatial Audio Scene
 Two helper GameObjects are present in the scene: **FillAudioSourceGroup** and **GetAudioSourceGroup**. Activating or deactivating them switches between the corresponding audio retrieval APIs.
