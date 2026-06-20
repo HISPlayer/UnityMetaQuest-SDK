@@ -2,12 +2,12 @@
 
 Please, download the sample here: [**HISPlayer Meta XR Sample**](https://downloads.hisplayer.com/Unity/Quest/HISPlayer_MetaXR_Sample_1.1.0.unitypackage) (no need to download it if you have received it in the email). 
 
-## 1. Set Up HISPlayer Meta Quest SDK Sample
+## 1. Set Up HISPlayer Meta XR Sample
 
 Before using the sample, please make sure you have followed the above steps to set-up your Unity project for Oculus and HISPlayer SDK. To use the sample, please follow these steps:
   - Set up the [Meta XR All-in-One environment](/setup-guide.md?id=_11-integrate-meta-xr-all-in-one-sdk).
   - Import HISPlayer SDK
-  - Import HISPlayer Meta Quest SDK Sample
+  - Import HISPlayer Meta XR Sample
   - Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources.
   - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**. This must be done for **each scene** you want to test while adding them to the Scene List. Open each scene located in `Assets/HISPlayerMetaQuestSample/Scenes/`, set the license key if needed, then go to **File > Build Settings > Add Open Scenes** to include it in the **Scene List** of the Build Profile.
   - Build and Run
