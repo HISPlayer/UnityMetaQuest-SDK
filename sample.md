@@ -69,13 +69,11 @@ This scene uses the same settings as the 360 ​​scene, but adds **stereoscopi
 For more information, please refer to the following [Stereoscopic guide](/stereoscopic.md).
 
 #### Ambisonic Scene
-This scene plays **audio-only** content; there is no video rendering surface. The default stream used is:  
-`https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_16Ch.mkv`  
-with **Ambisonic Audio** configured as **AMBIX_16 Channels**.  
+This scene plays **audio-only** content; there is no video rendering surface. The default stream used is 3rd order ambisonics (16 channels) ambiX format configured as **AMBIX_16 Channels**.  
 
 You can also test with these alternative streams:  
-- `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_9Ch.mkv` with **Ambisonic Audio** configured as **AMBIX_9 Channels**.  
-- `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_TBE_8_2.mkv` with **Ambisonic Audio** configured as **TBE_8 Channels_2 Head Locked Channels**.
+- `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_AmbiX_9Ch.mkv`: 2nd order ambisonics (9 channels) ambiX format configured as **AMBIX_9 Channels**.  
+- `https://downloads.hisplayer.com/Unity/test-contents/Ambisonic_TBE_8_2.mkv`: 8 channels + 2 channels head-locked stereo TBE format configured as **TBE_8 Channels_2 Head Locked Channels**.
 
 For more information, please refer to the following [Ambisonic documentation](/ambisonic.md).
 
