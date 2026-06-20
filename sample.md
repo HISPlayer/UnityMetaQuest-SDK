@@ -25,7 +25,7 @@ All sample scenes share a common foundation that you need to understand before l
   - **Overlay Shape**: `Quad` for flat video, `Equirect` for 360°.
   - **Is External Surface**: `True`
   - **External Surface Width / Height**: set to the maximum resolution of your streams.
-  - **Is Protected Content**: `True` when playing DRM-protected content.
+  - **Is Protected Content**: `True` when playing L1 DRM-protected content.
 - The `SetUpMetaQuest()` method finds the `OVROverlay` component, assigns it to `MultiStreamProperties.externalSurface`, and calls `SetUpPlayer()` to initialize the player.
 - **MultiStreamProperties** must have **RenderMode** set to **External Surface** on the **StreamController** GameObject.
 
