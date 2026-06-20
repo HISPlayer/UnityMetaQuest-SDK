@@ -18,7 +18,7 @@ It’s required to set **AmbisonicAudio** property in MultistreamProperties thro
 * Recommended audio sample rate is 48000Hz.
 * Multistream mode with ambisonics is not supported.
 
-For more details, please refer to below APIs section and HISPlayer Meta Quest Ambisonic Sample section.
+For more details, please refer to below APIs section and [HISPlayer Meta XR Sample Ambisonic scene](https://hisplayer.github.io/UnityMetaQuest-SDK/#/sample?id=ambisonic-scene).
 
 ## Related APIs
 
