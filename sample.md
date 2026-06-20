@@ -80,7 +80,7 @@ You can also test with these alternative streams:
 For more information, please refer to the following [Ambisonic documentation](/ambisonic.md).
 
 #### DRM Scene
-This scene is designed for **DRM-protected HEVC** content.
+This scene is designed for **L1 DRM-protected HEVC** content with **External Surface** rendering mode.
 
 For more information, please refer to the following [DRM documentation](drm.md).
 
