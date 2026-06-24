@@ -142,7 +142,7 @@ The following public APIs are provided by **HISPlayerManager**:
    * **public HISPlayerCaptionAlignment alignment**: The information of how text is aligned within the cue box (left, right, center)
    * **public float line**: The vertical position of the text cue box, interpreted as either a 0.0–1.0 fraction.
  
-* **protected struct VideoSourceOptions**: The information of optional parameters for **AddVideoContent** and **ChangeVideoContent** APIs.
+* **public struct VideoSourceOptions**: The information of optional parameters for **AddVideoContent** and **ChangeVideoContent** APIs.
    * **public string extSubtitleURL**: The external subtitle URL.
    * **public string keyServerURI**: The DRM license key for each URL.
    * **public string tokenKey**: The key of the token associated with the URL.
