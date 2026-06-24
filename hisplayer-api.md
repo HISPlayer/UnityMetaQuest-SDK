@@ -121,11 +121,11 @@ The following public APIs are provided by **HISPlayerManager**:
    * **public int height**: Height of the track.
    * **public int framerate**: Framerate of the track in frames per second.
 
-* **public struct HISPlayerCaptionTrack**:
-   * **public string id**: ID of the caption
-   * **public string language**: Language of the caption
-
 * **public struct HisPlayerAudioTrack**:
+   * **public string id**: ID of the audio track.
+   * **public string language**: Language of the audio.
+
+* **public struct HISPlayerCaptionTrack**:
    * **public string id**: ID of the caption
    * **public string language**: Language of the caption
  
