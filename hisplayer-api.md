@@ -115,7 +115,7 @@ The following public APIs are provided by **HISPlayerManager**:
    * **public string stringInfo**: Log information about the error.
 
 * **public struct HISPlayerTrack**:
-   * **public string id**: Id of the track
+   * **public string id**: Id of the track.
    * **public int bitrate**: Bitrate of the track in bits per second.
    * **public int width**: Width of the track.
    * **public int height**: Height of the track.
