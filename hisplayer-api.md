@@ -126,8 +126,8 @@ The following public APIs are provided by **HISPlayerManager**:
    * **public string language**: Language of the audio.
 
 * **public struct HISPlayerCaptionTrack**:
-   * **public string id**: ID of the caption
-   * **public string language**: Language of the caption
+   * **public string id**: ID of the caption.
+   * **public string language**: Language of the caption.
  
 * **public struct HISPlayerCaptionElement**: The information of the triggered event turns into caption’s format.
    * **public int playerIndex**: The index of the player where the event is triggered.
