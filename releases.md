@@ -1,5 +1,16 @@
 # HISPlayer Unity Meta Quest SDK Release Notes
 
+### Version 5.7.0
+##### June 25, 2026
+- [**Improvement**] Updated Quest SDK name to XR SDK.
+- [**Added**] External subtitle support with WebVTT and SRT formats. New APIs:
+  - `list <string> extSubtitleUrl`
+  - `enum HISPlayerCaptionAlignment`
+  - Updated `HISPlayerCaptionElement` with more element: `position`, `alignment`, `line`
+  - `struct VideoSourceOptions`
+  - `AddVideoContent(int playerIndex, string url, VideoSourceOptions options = default)`
+  - `ChangeVideoContent(int playerIndex, string url, VideoSourceOptions options = default)`
+
 ### Version 5.6.2
 ##### May 26, 2026
 - [**Improvement**] Optimized video frame and GetVideoPosition (timestamp) synchronization.
