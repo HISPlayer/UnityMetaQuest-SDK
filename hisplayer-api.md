@@ -139,7 +139,7 @@ The following public APIs are provided by **HISPlayerManager**:
    * **public int playerIndex**: The index of the player where the event is triggered.
    * **public string caption**: The next generated caption text.
    * **public float position**: The horizontal position of the text along the inline (left-right) axis, as a 0.0–1.0 fraction of the display.
-   * **public HISPlayerCaptionAlignment alignment**: The information of how text is aligned within the cue box (left, right, center)
+   * **public HISPlayerCaptionAlignment alignment**: The information of how text is aligned within the cue box (left, right, center).
    * **public float line**: The vertical position of the text cue box, interpreted as either a 0.0–1.0 fraction.
  
 * **public struct VideoSourceOptions**: The information of optional parameters for **AddVideoContent** and **ChangeVideoContent** APIs.
@@ -307,6 +307,18 @@ This event occurs whenever a caption's text has been generated.
   <tr>
     <td>caption</td>
     <td>The next generated caption text.</td>
+  </tr>
+  <tr>
+    <td>position</td>
+    <td>The horizontal position of the text along the inline (left-right) axis, as a 0.0–1.0 fraction of the display.</td>
+  </tr>
+  <tr>
+    <td>alignment</td>
+    <td>The information of how text is aligned within the cue box (left, right, center).</td>
+  </tr>
+    <tr>
+    <td>line</td>
+    <td>The vertical position of the text cue box, interpreted as either a 0.0–1.0 fraction.</td>
   </tr>
 </table>
 
