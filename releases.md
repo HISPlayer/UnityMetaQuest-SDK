@@ -1,7 +1,7 @@
 # HISPlayer Unity XR SDK for Meta Quest (Meta XR) Release Notes
 
 ### Version 5.7.0
-##### June 25, 2026
+##### June 26, 2026
 - [**Improvement**] Updated Quest SDK name to XR SDK.
 - [**Added**] External subtitle support with WebVTT and SRT formats. New APIs:
   - `list <string> extSubtitleUrl`
