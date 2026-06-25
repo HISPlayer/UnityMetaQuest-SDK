@@ -1,4 +1,4 @@
-# HISPlayer Unity Meta Quest SDK Release Notes
+# HISPlayer Unity XR SDK for Meta Quest (Meta XR) Release Notes
 
 ### Version 5.7.0
 ##### June 25, 2026
