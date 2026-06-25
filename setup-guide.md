@@ -44,7 +44,7 @@ In XR Plug-in Management, please make sure that you have the **OpenXR** option c
 Importing the SDK is the same as importing other normal packages in Unity. 
 Select the package of _HISPlayer SDK_ and import it.
 
-**Assets > Import Package > Custom Package > HISPlayer Meta Quest SDK unity package**
+**Assets > Import Package > Custom Package > HISPlayer XR SDK unity package**
 
 Select the package of _HISPlayer SDK_ and import it.
 
