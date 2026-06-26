@@ -1,4 +1,4 @@
-- [HISPlayer Unity Meta Quest SDK](/introduction.md)
+- [HISPlayer Unity XR SDK Meta Quest](/introduction.md)
 - [Quickstart Guide](/setup-guide.md)
 - [Meta XR Sample](/sample.md)
 - [HISPlayer API](/hisplayer-api.md)
