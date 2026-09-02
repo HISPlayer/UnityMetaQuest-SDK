@@ -80,7 +80,7 @@ Before using the sample, please make sure you have followed the above steps to s
   - Import HISPlayer SDK
   - Import HISPlayer Meta XR Sample
   - Import TextMeshPro. Go to Unity Window > TextMeshPro > Import TMP Essential Resources.
-  - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**. This must be done for **each scene** you want to test while adding them to the Scene List. Open each scene located in `Assets/HISPlayerMetaQuestSample/Scenes/`, set the license key if needed, then go to **File > Build Settings > Add Open Scenes** to include it in the **Scene List** of the Build Profile.
+  - If you received a license key from HISPlayer, input the license key through the Inspector Unity window: **StreamController GameObject > HISPlayerSample component > License Key**. This must be done for **each scene** you want to test while adding them to the Scene List. Open each scene located in `Assets/HISPlayerMetaXRSample/Scenes/`, set the license key if needed, then go to **File > Build Settings > Add Open Scenes** to include it in the **Scene List** of the Build Profile.
   - Build and Run
 
 For more information about the Meta XR sample, please refer to the following [**Meta XR Sample page**](/sample.md).
