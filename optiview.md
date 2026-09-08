@@ -4,6 +4,8 @@ Dolby OptiView Real-time Streaming is supported in a special HISPlayer SDK "opti
 
 Supported Graphics API: **Vulkan**.
 
+Please make sure that you have set-up the HISPlayer SDK by referring to [Setup Guide](./setup-guide.md).
+
 To configure OptiView Real-time Streaming, go to HISPlayer multistream properties in Unity editor. Set the following properties as shown below:
 - Enable Optiview: Check the checkbox.
 - Stream Name: Your Dolby OptiView Real-time stream name.
