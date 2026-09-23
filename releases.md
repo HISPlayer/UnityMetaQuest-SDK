@@ -1,9 +1,15 @@
 # HISPlayer Unity XR SDK for Meta Quest (Meta XR) Release Notes
 
 ### Version 6.0.0
-##### September XX, 2026
-- [**Added**] Support DRM L1 with External Surface. (OpenXR, AndroidXR only)
-- [**Improvement**] Display watermark over External Surface. (OpenXR, AndroidXR only)
+##### September 23, 2026
+- [**Improvement**] Optimized HISPlayer Event synchronization routine.
+- [**Added**] `XRLayerProperties` to support DRM L1 and composition layer usage improvement for OpenXR and AndroidXR using External Surface render mode.
+  - `Transform xrLayerVideoScreen`
+  - `int xrLayerOrder`
+  - `HISPlayerXRLayerProjection xrLayerProjection`
+  - `HISPlayerStereoMode xrLayerStereoMode`
+  - `bool xrLayerMatchVideoAspect`
+  - `float xrLayerRadius` 
 
 ### Version 5.8.2
 ##### July 27, 2026
