@@ -8,7 +8,7 @@ The following public APIs are provided by **HISPlayerManager**:
 * **public List <StreamProperties> multiStreamProperties**: List of properties for multi stream. Please, don't modify this list directly, use the **AddStream** or **RemoveStream** functions instead.
   
 * **public class StreamProperties**:
-    * **public StreamProperties(bool isLoopPlaybackEnabled = true, bool isAutoTransitionEnabled = false, bool isUnityAudioEnabled = false)**: Constructor of the class. The received parameters will set the value of **LoopPlayback**, **AutoTransition** and **UnityAudio** properties respectively. 
+    * **public StreamProperties(bool isLoopPlaybackEnabled = true, bool isAutoTransitionEnabled = false, bool isUnityAudioEnabled = false, HISPlayerAmbisonicAudio ambisonicAudio = HISPlayerAmbisonicAudio.NONE)**: Constructor of the class. The received parameters will set the value of **LoopPlayback**, **AutoTransition**, **UnityAudio** and **AmbisonicAudio** properties respectively.
     * **public HISPlayerRenderMode renderMode**: Type of texture for rendering. **HISPlayerRenderMode.NONE** by default.
     * **public Material material**: Reference to the Unity Material.
     * **public RawImage rawImage**: Reference to the Unity Raw Image.
@@ -36,7 +36,7 @@ The following public APIs are provided by **HISPlayerManager**:
     * **Material**
     * **RawImage**
     * **NONE**
-    * **ExternalSurface**
+    * **ExternalSurface** 
 
 * **public enum HISPlayerStereoMode**: Type of stereoscopic mode for external surface rendering:
     * **None**
