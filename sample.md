@@ -126,3 +126,7 @@ Each scene provides a unified control bar with the following interactive element
 - **Settings** button: opens a settings panel.
 
 Inside the **Settings** panel, and depending on the video’s capabilities, you can change the **Quality**, **Language**, and **Captions**.
+
+### 2.4. Download Video for Offline Playback
+8K-HEVC, DRM scenes include content Download feature.
+For more information, please refer to the following [**Download Video Content**](./download_content.md).
