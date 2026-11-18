@@ -3,6 +3,7 @@
 - [Meta XR Sample](/sample.md)
 - [HISPlayer API](/hisplayer-api.md)
 - [DRM](/drm.md)
+- [Custom HTTP Headers](/custom-http-headers.md)
 - [Material / RawImage / RenderTexture Rendering](/rendermodes.md)
 - [Playing Local Files](/local-files.md)
 - [Stereoscopic Video](/stereoscopic.md)
