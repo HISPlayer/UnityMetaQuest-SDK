@@ -44,3 +44,5 @@ Belos is an example of the usage of the DRM fields in the editor with different 
 ## Widevine L1
 If you need to play Widevine L1 content, please refer to [HISPlayer Meta XR Sample DRM scene](https://hisplayer.github.io/UnityMetaQuest-SDK/#/sample?id=drm-scene)
 
+Downloaded content is played offline at the security level selected when the content was downloaded. Content downloaded with L1 can be played offline only in **External Surface** render mode, with the **Is Protected Content** option of the **OVROverlay** enabled. Content downloaded with L3 can be played offline in every render mode; in **External Surface** render mode, disable the **Is Protected Content** option of the **OVROverlay**. For more details, refer to [**Download Video Content**](/download_content.md).
+
