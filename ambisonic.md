@@ -1,5 +1,5 @@
 > [!WARNING]  
-> MetaXR usage is deprecated in the latest SDK v6.1.0. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
+> MetaXR usage is deprecated in SDK v6.1.0 and above. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
 
 # Ambisonics Audio
 
