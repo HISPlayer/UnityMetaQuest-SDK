@@ -1,3 +1,6 @@
+> [!WARNING]  
+> MetaXR usage is deprecated in the latest SDK v6.1.0. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
+
 # Ambisonics Audio
 
 HISPlayer SDK v5.0.0 and above supports Ambisonics audio with ambiX format from first order to 3rd order, and TBE format to capture sound in all directions. 
