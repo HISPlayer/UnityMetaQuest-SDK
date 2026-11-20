@@ -1,6 +1,3 @@
-> [!WARNING]  
-> MetaXR usage is deprecated in the latest SDK v6.1.0. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
-
 # Meta XR Sample
 
 Please, download the sample here: [**HISPlayer Meta XR Sample**](https://downloads.hisplayer.com/Unity/XR/HISPlayer_MetaXR_Sample_2.0.2.unitypackage) (no need to download it if you have received it in the email). 
