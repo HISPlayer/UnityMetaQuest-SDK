@@ -1,6 +1,3 @@
-> [!WARNING]  
-> MetaXR usage is deprecated in the latest SDK v6.1.0. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
-
 # QuickStart Guide
 Getting started with HISPlayer consists of implementing the following steps:
 
