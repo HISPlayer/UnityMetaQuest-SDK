@@ -1,3 +1,6 @@
+> [!WARNING]  
+> MetaXR usage is deprecated in SDK v6.1.0 and above. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
+
 - [HISPlayer Unity XR SDK Meta Quest](/introduction.md)
 - [Quickstart Guide](/setup-guide.md)
 - [Meta XR Sample](/sample.md)
