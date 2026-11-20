@@ -1,6 +1,3 @@
-> [!WARNING]  
-> MetaXR usage is deprecated in SDK v6.1.0 and above. Please use **[OpenXR](https://hisplayer.github.io/UnityXR-SDK/#/)**.
-
 # Controlling ABR
 
 There are 3 ways to work with ABR (Adaptive Bitrate) : 
