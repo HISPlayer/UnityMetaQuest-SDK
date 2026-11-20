@@ -35,6 +35,27 @@ details[open]::before {
     float: left;
 }
 
+.sidebar-nav .sidebar-warning {
+  margin: 0 15px 15px;
+  padding: 10px 12px;
+  border-left: 4px solid #e7c000;
+  border-radius: 4px;
+  background: rgba(255, 229, 100, 0.25);
+  color: #5c4d00;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+.sidebar-nav .sidebar-warning a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  color: #2596be;
+  text-decoration: underline;
+}
+.sidebar-nav .sidebar-warning a::before {
+  content: none !important;
+}
+
 </style>
 <body>
   <div id="app">Please wait ... </div>
@@ -67,12 +88,11 @@ details[open]::before {
       }
     }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@1"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-java.js"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-themeable"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1.22.0/components/prism-java.js"></script> 
   <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
