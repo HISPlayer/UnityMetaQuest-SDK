@@ -1,5 +1,5 @@
 <div class="sidebar-warning">
-⚠️ <strong>MetaXR is deprecated</strong> in SDK v6.1.0 and above. Please use <a href="https://hisplayer.github.io/UnityXR-SDK/#/">OpenXR</a>.
+⚠️ <strong>MetaXR usage is deprecated in SDK v6.1.0 and above. Please use <a href="https://hisplayer.github.io/UnityXR-SDK/#/">OpenXR</a></strong>.
 </div>
 <br>
 
